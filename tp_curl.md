@@ -2,38 +2,10 @@
 
 Pour les questions suivantes, vous devez utiliser l'url suivante : https://webhook.site/d4ec90aa-8173-48dd-8414-6fb832ea2a26 
 
- Pour aller sur le site on utilise la commande : curl https://webhook.site/d4ec90aa-8173-48dd-8414-6fb832ea2a26
 
 Pour tous les appels vous devez ajouter un header pour identifier votre appel parmis ceux des autres étudiants : x-student : VOTRE_NOM
 
-Pour rajouter le header : curl --header "x-student: Nom_Prenom" https://webhook.site/d4ec90aa-8173-48dd-8414-6fb832ea2a26
-
 ## Faire un appel curl : copier la commande exécutée et indiquer la requête et la réponse
-
-Ou on peut faire les deux questions avec une seule requete : curl https://webhook.site/d4ec90aa-8173-48dd-8414-6fb832ea2a26 -H "x-student: Nom_Prenom" -v. La reponse qu'on a c'est : 
-** Trying 46.4.105.116:443...
-* Connected to webhook.site (46.4.105.116) port 443 (#0)
-* schannel: disabled automatic use of client certificate
-* ALPN: offers http/1.1
-* ALPN: server did not agree on a protocol. Uses default.
-> GET /d4ec90aa-8173-48dd-8414-6fb832ea2a26 HTTP/1.1
-> Host: webhook.site
-> User-Agent: curl/7.83.1
-> Accept: */*
-> x-student: Megi_Balliu
->
-* Mark bundle as not supporting multiuse
-< HTTP/1.1 200 OK
-< Server: nginx
-< Content-Type: text/plain; charset=UTF-8
-< Transfer-Encoding: chunked
-< Vary: Accept-Encoding
-< X-Request-Id: 3c053785-650c-4443-8990-55628c3f180d
-< X-Token-Id: d4ec90aa-8173-48dd-8414-6fb832ea2a26
-< Cache-Control: no-cache, private
-< Date: Thu, 22 Sep 2022 12:43:49 GMT
-<
-* Connection #0 to host webhook.site left intact**
 
 ## Quel est la version du protocole utilisé par le serveur ?
 
