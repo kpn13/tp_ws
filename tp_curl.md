@@ -7,9 +7,9 @@ Pour tous les appels vous devez ajouter un header pour identifier votre appel pa
 
 ## Faire un appel curl : copier la commande exécutée et indiquer la requête et la réponse
 
+
 ## Quel est la version du protocole utilisé par le serveur ?
 
-curl --version nous donne la version utilisé et aussi les protocoles
 
 ## Quels sont les headers que l'on envoie dans la requête ? Quels sont leur sens ?
 
