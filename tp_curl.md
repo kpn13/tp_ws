@@ -6,44 +6,44 @@ Pour tous les appels vous devez ajouter un header pour identifier votre appel pa
 
 ## Faire un appel curl : copier la commande exécutée et indiquer la requête et la réponse
 
-### curl -verbose --header "x-student: OSAMA ALLABWANI" https://webhook.site/d4ec90aa-8173-48dd-8414-6fb832ea2a26
+curl -verbose --header "x-student: OSAMA ALLABWANI" https://webhook.site/d4ec90aa-8173-48dd-8414-6fb832ea2a26
 
 ## Quel est la version du protocole utilisé par le serveur ?
 
-### HTTP/1.1
+HTTP/1.1
 
 ## Quels sont les headers que l'on envoie dans la requête ? Quels sont leur sens ?
 
-### Host: webhook.site -> Le IP/Domain de serveur
-### User-Agent: curl/7.83.1 -> Le nom d'application client
-### Accept: */* -> donne la liste des types de contenue que la client peut comprendre. Ici on accepte tous
-### Referer: rbose -> l'addresse de la page dont on fait la requête (utile pour l'analyse, logging, caching, etc)
-### x-student: OSAMA ALLABWANI -> custom header requis par l'excersise
+Host: webhook.site -> Le IP/Domain de serveur
+User-Agent: curl/7.83.1 -> Le nom d'application client
+Accept: */* -> donne la liste des types de contenue que la client peut comprendre. Ici on accepte tous
+Referer: rbose -> l'addresse de la page dont on fait la requête (utile pour l'analyse, logging, caching, etc)
+x-student: OSAMA ALLABWANI -> custom header requis par l'excersise
 
 ## Quelles informations pouvez-vous trouver à propos du certificat SSL ?
 
-### On peut trouver "schannel: disabled automatic use of client certificate" qui dit qu'on a pas utilisé le certificat de client
+On peut trouver "schannel: disabled automatic use of client certificate" qui dit qu'on a pas utilisé le certificat de client
 
 ## Quel est le code de la réponse ? Que signifie-t-il ?
 
-### le code est 200 et il signifie que la requête HTTP a bien passé sans erreur
+le code est 200 et il signifie que la requête HTTP a bien passé sans erreur
 
 ## Quels headers recevez vous dans la response ? Quels sont leur sens ?
 
-### Server: nginx -> le type de serveur
-### Content-Type: text/plain; charset=UTF-8 -> le type de contenue du corp de la réponse et le character set qu'il utilise (UTF8, ASCI, etc). Ici c'est du texte UTF8
-### Transfer-Encoding: chunked -> le type de codage utilisé pour transferer le corp de réponse. Ici c'est chunked, le serveur envoie la réponse dans des chunks de données
-### Vary: Accept-Encoding -> Le header montre le compotement du serveur par rapport à caching le reprosentation du ressource requis
-### X-Request-Id: 98355ae3-4bea-4601-ac10-962cf3283e36 -> le ID de requête generer par le serveur
-### X-Token-Id: d4ec90aa-8173-48dd-8414-6fb832ea2a26 -> le ID de token d'authentification
-### Cache-Control: no-cache, private -> est-ce que la réponse a été envoyé de la cache ou non. Ici, non
-### Date: Thu, 29 Sep 2022 14:08:25 GMT -> la date de réponse
+Server: nginx -> le type de serveur
+Content-Type: text/plain; charset=UTF-8 -> le type de contenue du corp de la réponse et le character set qu'il utilise (UTF8, ASCI, etc). Ici c'est du texte UTF8
+Transfer-Encoding: chunked -> le type de codage utilisé pour transferer le corp de réponse. Ici c'est chunked, le serveur envoie la réponse dans des chunks de données
+Vary: Accept-Encoding -> Le header montre le compotement du serveur par rapport à caching le reprosentation du ressource requis
+X-Request-Id: 98355ae3-4bea-4601-ac10-962cf3283e36 -> le ID de requête generer par le serveur
+X-Token-Id: d4ec90aa-8173-48dd-8414-6fb832ea2a26 -> le ID de token d'authentification
+Cache-Control: no-cache, private -> est-ce que la réponse a été envoyé de la cache ou non. Ici, non
+Date: Thu, 29 Sep 2022 14:08:25 GMT -> la date de réponse
 
 ## Faire un appel curl en envoyant du texte brut : copier la commande exécutée et indiquer la requête et la réponse
 
-### curl -verbose -H "x-student: OSAMA ALLABWANI" -H "Content-Type: text/plain; charset=UTF-8" -d 'Test' https://webhook.site/d4ec90aa-8173-48dd-8414-6fb832ea2a26
+curl -verbose -H "x-student: OSAMA ALLABWANI" -H "Content-Type: text/plain; charset=UTF-8" -d 'Test' https://webhook.site/d4ec90aa-8173-48dd-8414-6fb832ea2a26
 
-### requête :
+requête :
 > POST /d4ec90aa-8173-48dd-8414-6fb832ea2a26 HTTP/1.1
 > Host: webhook.site
 > User-Agent: curl/7.83.1
@@ -53,7 +53,7 @@ Pour tous les appels vous devez ajouter un header pour identifier votre appel pa
 > Content-Type: text/plain; charset=UTF-8
 > Content-Length: 6
 
-### réponse :
+réponse :
 < HTTP/1.1 200 OK
 < Server: nginx
 < Content-Type: text/plain; charset=UTF-8
@@ -65,11 +65,11 @@ Pour tous les appels vous devez ajouter un header pour identifier votre appel pa
 < Date: Thu, 29 Sep 2022 14:38:34 GMT
 
 
-## Faire un appel curl en envoyant du JSON (avec les bons headers) : copier la commande exécutée et indiquer la requête et la réponse
+Faire un appel curl en envoyant du JSON (avec les bons headers) : copier la commande exécutée et indiquer la requête et la réponse
 
-### curl -verbose -H "x-student: OSAMA ALLABWANI" -H "Content-Type: application/json" -d "{\"Code\": \"Test\"}" https://webhook.site/d4ec90aa-8173-48dd-8414-6fb832ea2a26
+curl -verbose -H "x-student: OSAMA ALLABWANI" -H "Content-Type: application/json" -d "{\"Code\": \"Test\"}" https://webhook.site/d4ec90aa-8173-48dd-8414-6fb832ea2a26
 
-### requête :
+requête :
 > POST /d4ec90aa-8173-48dd-8414-6fb832ea2a26 HTTP/1.1
 > Host: webhook.site
 > User-Agent: curl/7.83.1
@@ -79,7 +79,7 @@ Pour tous les appels vous devez ajouter un header pour identifier votre appel pa
 > Content-Type: application/json
 > Content-Length: 16
 
-### réponse :
+réponse :
 < HTTP/1.1 200 OK
 < Server: nginx
 < Content-Type: text/plain; charset=UTF-8
@@ -92,9 +92,9 @@ Pour tous les appels vous devez ajouter un header pour identifier votre appel pa
 
 ## Faire une appel curl en envoyant une basic authentication en utilisant 2 méthodes différentes : copier les commandes exécutées et indiquer la requête et la réponse à chaque fois 
 
-### curl -verbose -H "x-student: OSAMA ALLABWANI" -u "osama:password" https://webhook.site/d4ec90aa-8173-48dd-8414-6fb832ea2a26
+curl -verbose -H "x-student: OSAMA ALLABWANI" -u "osama:password" https://webhook.site/d4ec90aa-8173-48dd-8414-6fb832ea2a26
 
-### requête :
+requête :
 > GET /d4ec90aa-8173-48dd-8414-6fb832ea2a26 HTTP/1.1
 > Host: webhook.site
 > Authorization: Basic b3NhbWE6cGFzc3dvcmQ=
@@ -103,7 +103,7 @@ Pour tous les appels vous devez ajouter un header pour identifier votre appel pa
 > Referer: rbose
 > x-student: OSAMA ALLABWANI
 
-### réponse :
+réponse :
 < HTTP/1.1 200 OK
 < Server: nginx
 < Content-Type: text/plain; charset=UTF-8
@@ -115,9 +115,9 @@ Pour tous les appels vous devez ajouter un header pour identifier votre appel pa
 < Date: Thu, 29 Sep 2022 14:45:13 GMT
 
 
-### curl -verbose -H "x-student: OSAMA ALLABWANI" -H "Authorization: Basic b3NhbWE6cGFzc3dvcmQ=" https://webhook.site/d4ec90aa-8173-48dd-8414-6fb832ea2a26
+curl -verbose -H "x-student: OSAMA ALLABWANI" -H "Authorization: Basic b3NhbWE6cGFzc3dvcmQ=" https://webhook.site/d4ec90aa-8173-48dd-8414-6fb832ea2a26
 
-### requête :
+requête :
 > GET /d4ec90aa-8173-48dd-8414-6fb832ea2a26 HTTP/1.1
 > Host: webhook.site
 > User-Agent: curl/7.83.1
@@ -126,7 +126,7 @@ Pour tous les appels vous devez ajouter un header pour identifier votre appel pa
 > x-student: OSAMA ALLABWANI
 > Authorization: Basic b3NhbWE6cGFzc3dvcmQ=
 
-### réponse :
+réponse :
 < HTTP/1.1 200 OK
 < Server: nginx
 < Content-Type: text/plain; charset=UTF-8
@@ -140,7 +140,7 @@ Pour tous les appels vous devez ajouter un header pour identifier votre appel pa
 ## Exécuter la commande suivante avec la méthode GET puis indiquer la réponse : curl https://demo.api-platform.com/books/07dd4786-aaa7-4d08-a467-076b76f1d1b6 
 
 
-### curl -X GET -verbose -H "x-student: OSAMA ALLABWANI" https://demo.api-platform.com/books/07dd4786-aaa7-4d08-a467-076b76f1d1b6
+curl -X GET -verbose -H "x-student: OSAMA ALLABWANI" https://demo.api-platform.com/books/07dd4786-aaa7-4d08-a467-076b76f1d1b6
 
 
 < HTTP/1.1 404 Not Found
@@ -165,7 +165,7 @@ Pour tous les appels vous devez ajouter un header pour identifier votre appel pa
 
 ## Exécuter la commande suivante avec la méthode PATCH  puis indiquer la réponse : curl https://demo.api-platform.com/top_books/1
 
-### curl -X PATCH -verbose -H "x-student: OSAMA ALLABWANI" https://demo.api-platform.com/top_books/1
+curl -X PATCH -verbose -H "x-student: OSAMA ALLABWANI" https://demo.api-platform.com/top_books/1
 
 < HTTP/1.1 405 Method Not Allowed
 < Date: Thu, 29 Sep 2022 14:52:35 GMT
@@ -210,11 +210,11 @@ h2 { font-size: 18px; }</style>
 
 ## Quel est le code HTTP reçu ? Quel est sa signification ?
 
-### Le code est 405 et il signifie que la ressource ne supporte pas cette le méthode PATCH qu'on utilise
+Le code est 405 et il signifie que la ressource ne supporte pas cette le méthode PATCH qu'on utilise
 
 ## Exécuter la commande suivante puis indiquer la réponse : curl https://demo.api-platform.com/top_books/1
 
-### curl -verbose -H "x-student: OSAMA ALLABWANI" https://demo.api-platform.com/top_books/1
+curl -verbose -H "x-student: OSAMA ALLABWANI" https://demo.api-platform.com/top_books/1
 
 < HTTP/1.1 200 OK
 < Date: Thu, 29 Sep 2022 14:56:33 GMT
@@ -242,7 +242,7 @@ h2 { font-size: 18px; }</style>
 
 ## Exécuter la commande suivante puis indiquer la réponse : curl https://demo.api-platform.com/top_books/9999
 
-### curl -verbose -H "x-student: OSAMA ALLABWANI" https://demo.api-platform.com/top_books/9999
+curl -verbose -H "x-student: OSAMA ALLABWANI" https://demo.api-platform.com/top_books/9999
 
 < HTTP/1.1 404 Not Found
 < Date: Thu, 29 Sep 2022 14:58:19 GMT
@@ -270,7 +270,7 @@ le code est 404 et il signifie que le ressource qu'on cherche n'existe pas
 
 ## Exécuter la requête suivante et copier la réponse : curl https://google.fr
 
-### curl -verbose -H "x-student: OSAMA ALLABWANI" https://google.fr
+curl -verbose -H "x-student: OSAMA ALLABWANI" https://google.fr
 
 < HTTP/1.1 301 Moved Permanently
 < Location: https://www.google.fr/
@@ -299,8 +299,8 @@ le code est 301. Ici le serveur nous redirecte au URL https://www.google.fr/
 
 ## Comment éviter cette réponse ? Trouvez 2 solutions différentes et détaillez les.
 
-### On peut utiliser le URL: https://www.google.fr/ à la place de https://google.fr. Par ça on evite le redirection est on trouve la réponse qu'on attend.
-### curl -verbose -H "x-student: OSAMA ALLABWANI" https://www.google.fr
+On peut utiliser le URL: https://www.google.fr/ à la place de https://google.fr. Par ça on evite le redirection est on trouve la réponse qu'on attend.
+curl -verbose -H "x-student: OSAMA ALLABWANI" https://www.google.fr
 
-### Aussi, on peut utiliser l'option -L pour dire à curl de suivre les redirections jusqu'à la fin et nous donner la réponse finale.
-### curl -verbose -H "x-student: OSAMA ALLABWANI" https://google.fr -L
+Aussi, on peut utiliser l'option -L pour dire à curl de suivre les redirections jusqu'à la fin et nous donner la réponse finale.
+curl -verbose -H "x-student: OSAMA ALLABWANI" https://google.fr -L
