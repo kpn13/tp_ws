@@ -6,18 +6,21 @@ Pour tous les appels vous devez ajouter un header pour identifier votre appel pa
 
 ## Faire un appel curl : copier la commande exécutée et indiquer la requête et la réponse
 
+curl -v --header "x-student:choukri" https://webhook.site/d4ec90aa-8173-48dd-8414-6fb832ea2a26
 
 ## Quel est la version du protocole utilisé par le serveur ?
+ http/1.1
 
 
 ## Quels sont les headers que l'on envoie dans la requête ? Quels sont leur sens ?
 
 
 ## Quelles informations pouvez-vous trouver à propos du certificat SSL ?
-
+SSL connection using TLSv1.3
+SSL certificate verify ok.
 
 ## Quel est le code de la réponse ? Que signifie-t-il ?
-
+le code de la réponse est 200 ==> succès
 
 ## Quels headers recevez vous dans la response ? Quels sont leur sens ?
 
