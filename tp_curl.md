@@ -216,6 +216,29 @@ curl -X POST -u "chems:123" -H "x-student:RachdiChemseddine" -v https://webhook.
 ## Exécuter la commande suivante avec la méthode PATCH  puis indiquer la réponse : curl https://demo.api-platform.com/top_books/1
 
 **reponse** : 
+< HTTP/2 200 
+< date: Fri, 30 Sep 2022 11:26:34 GMT
+< content-type: application/ld+json; charset=utf-8
+< content-length: 183
+< cache-control: no-cache, private
+< etag: "06a23177dff31429d2a7390117fe1b2d"
+< link: <https://demo.api-platform.com/docs.jsonld>; rel="http://www.w3.org/ns/hydra/core#apiDocumentation"
+< vary: Accept
+< vary: Content-Type
+< vary: Authorization
+< vary: Origin
+< x-content-type-options: nosniff
+< x-frame-options: deny
+< via: 1.1 google
+< cf-cache-status: DYNAMIC
+< report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=kEyX0GAH3DpgLdeUsw6m%2FOcDRd1AOVje29AYZ%2BRtihwMtBcOvGJEubpichPIAPN2gDXPF53O7CwRF4gTv3ee2%2BV0QEDnsPvaXmBfXeckWBdosbJ%2BTFyKbsykLtNSlJ6lvmOn6qGJ6Oc%3D"}],"group":"cf-nel","max_age":604800}
+< nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+< server: cloudflare
+< cf-ray: 752c9ab9ab4a993f-FRA
+< alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+< 
+* Connection #0 to host demo.api-platform.com left intact
+{"@context":"\/contexts\/TopBook","@id":"\/top_books\/1","@type":"TopBook","id":1,"title":"Depuis l\u0027au-delà","author":"Werber Bernard","part":"","place":"F WER","borrowCount":9} 
 
 
 
@@ -229,31 +252,91 @@ curl -X POST -u "chems:123" -H "x-student:RachdiChemseddine" -v https://webhook.
 ## Exécuter la commande suivante puis indiquer la réponse : curl https://demo.api-platform.com/top_books/1
 
 **reponse** :
-
+< HTTP/2 200 
+< date: Fri, 30 Sep 2022 11:27:06 GMT
+< content-type: application/ld+json; charset=utf-8
+< content-length: 183
+< cache-control: no-cache, private
+< etag: "06a23177dff31429d2a7390117fe1b2d"
+< link: <https://demo.api-platform.com/docs.jsonld>; rel="http://www.w3.org/ns/hydra/core#apiDocumentation"
+< vary: Accept
+< vary: Content-Type
+< vary: Authorization
+< vary: Origin
+< x-content-type-options: nosniff
+< x-frame-options: deny
+< via: 1.1 google
+< cf-cache-status: DYNAMIC
+< report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=m2iNRGXyfqKufUMbV3SVtzmxwzCJCp4OMysEBHkLZ%2FpbertFQG5gIT3sZMvuxv56WS%2Fs3zHdz405UbmM%2BY5JsWiVVaOjyK6Tfw5BKJBbjegyl4StlFhwBbE3kyEb57Ek67h4Otwiulg%3D"}],"group":"cf-nel","max_age":604800}
+< nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+< server: cloudflare
+< cf-ray: 752c9b7e4a62927d-FRA
+< alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+< 
+* Connection #0 to host demo.api-platform.com left intact
+{"@context":"\/contexts\/TopBook","@id":"\/top_books\/1","@type":"TopBook","id":1,"title":"Depuis l\u0027au-delà","author":"Werber Bernard","part":"","place":"F WER","borrowCount":9}
 
 
 ## Exécuter la commande suivante puis indiquer la réponse : curl https://demo.api-platform.com/top_books/9999
 
 **reponse** :
+< HTTP/2 404 
+< date: Fri, 30 Sep 2022 11:27:39 GMT
+< content-type: application/ld+json; charset=utf-8
+< content-length: 120
+< cache-control: no-cache, private
+< link: <https://demo.api-platform.com/docs.jsonld>; rel="http://www.w3.org/ns/hydra/core#apiDocumentation"
+< status: 404 Not Found
+< x-content-type-options: nosniff
+< x-frame-options: deny
+< via: 1.1 google
+< cf-cache-status: DYNAMIC
+< report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=2iV33fmWFcmE5LovAR%2F%2B5Acz99uJUNfJ6v%2FhxoCSmji8y87y5P0RtQBWktivSFdeqpLIbMgnqifbGi13onUDUEr%2F6JyYroqnMnC7VWLIa1wAQNeDR7Ek%2F55e9dKrzVncaiTJ55QIUIY%3D"}],"group":"cf-nel","max_age":604800}
+< nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+< server: cloudflare
+< cf-ray: 752c9c519db2374c-MXP
+< alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+< 
+* Connection #0 to host demo.api-platform.com left intact
+{"@context":"\/contexts\/Error","@type":"hydra:Error","hydra:title":"An error occurred","hydra:description":"Not Found"}
 
 
 
 ## Quel est le code HTTP ? Que signifie-t-il ?
 
 **Code** : 404
-**Signification** :
+**Signification** : page not found
 
 
 
 ## Exécuter la requête suivante et copier la réponse : curl https://google.fr
 
 **reponse** :
-
+< HTTP/2 301 
+< location: https://www.google.fr/
+< content-type: text/html; charset=UTF-8
+< date: Fri, 30 Sep 2022 11:28:11 GMT
+< expires: Fri, 30 Sep 2022 11:28:11 GMT
+< cache-control: private, max-age=2592000
+< server: gws
+< content-length: 219
+< x-xss-protection: 0
+< x-frame-options: SAMEORIGIN
+< set-cookie: CONSENT=PENDING+241; expires=Sun, 29-Sep-2024 11:28:11 GMT; path=/; domain=.google.fr; Secure
+< p3p: CP="This is not a P3P policy! See g.co/p3phelp for more info."
+< alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+< 
+<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
+<TITLE>301 Moved</TITLE></HEAD><BODY>
+<H1>301 Moved</H1>
+The document has moved
+<A HREF="https://www.google.fr/">here</A>.
+</BODY></HTML>
 
 
 ## Quel est le code HTTP reçu ? Pouvez-vous expliquer cette réponse ?
 
-**Code** :
+**Code** : 301
 **Signification** :
 
 
