@@ -6,6 +6,14 @@ Pour tous les appels vous devez ajouter un header pour identifier votre appel pa
 
 ## Faire un appel curl : copier la commande exécutée et indiquer la requête et la réponse
 curl --header "x-student:DODEMAN" https://webhook.site/6f594809-a4b4-483e-841b-0c3b0a00edfe
+
+Requête :
+> GET /6f594809-a4b4-483e-841b-0c3b0a00edfe HTTP/1.1
+> Host: webhook.site
+> User-Agent: curl/7.68.0
+> Accept: */*
+> x-student:DODEMAN
+
 Réponse :
 HTTP/1.1 200 OK
 < Server: nginx
