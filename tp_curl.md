@@ -71,7 +71,28 @@ Réponse :
 * Connection #0 to host webhook.site left intact
 
 ## Faire un appel curl en envoyant du JSON (avec les bons headers) : copier la commande exécutée et indiquer la requête et la réponse
+curl --header "x-student:DODEMAN" -v -X POST https://webhook.site/6f594809-a4b4-483e-841b-0c3b0a00edfe 
+-H "Content-Type: application/json" -d '{"login":"my_login","password":"my_password"}'
 
+Requête :
+> POST /6f594809-a4b4-483e-841b-0c3b0a00edfe HTTP/1.1
+> Host: webhook.site
+> User-Agent: curl/7.68.0
+> Accept: */*
+> x-student:DODEMAN
+> Content-Type: application/json
+> Content-Length: 45
+
+Réponse : 
+< HTTP/1.1 200 OK
+< Server: nginx
+< Content-Type: text/plain; charset=UTF-8
+< Transfer-Encoding: chunked
+< Vary: Accept-Encoding
+< X-Request-Id: fff56757-090a-4b47-874c-21a8e2ca5d63
+< X-Token-Id: 6f594809-a4b4-483e-841b-0c3b0a00edfe
+< Cache-Control: no-cache, private
+< Date: Tue, 04 Oct 2022 15:17:26 GMT
 
 ## Faire une appel curl en envoyant une basic authentication en utilisant 2 méthodes différentes : copier les commandes exécutées et indiquer la requête et la réponse à chaque fois 
 
