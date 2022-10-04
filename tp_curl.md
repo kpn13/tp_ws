@@ -91,14 +91,102 @@ réponse :
 
 ## Faire un appel curl en envoyant du JSON (avec les bons headers) : copier la commande exécutée et indiquer la requête et la réponse
 
+Requête : curl --header x-student:RETY -H "Content-Type: application/json" -v -X POST -d '{"login":"pet","password":"ouaf"}' https://webhook.site/6f594809-a4b4-483e-841b-0c3b0a00edfe 
 
+Requête :
+> POST /6f594809-a4b4-483e-841b-0c3b0a00edfe HTTP/1.1
+> Host: webhook.site
+> User-Agent: curl/7.82.0
+> Accept: */*
+> x-student:RETY
+> Content-Type: application/json
+> Content-Length: 33
+
+Réponse :
+< HTTP/1.1 200 OK
+< Server: nginx
+< Content-Type: text/plain; charset=UTF-8
+< Transfer-Encoding: chunked
+< Vary: Accept-Encoding
+< X-Request-Id: f2686cf3-602e-4a14-ae33-bb898a3bf1f4
+< X-Token-Id: 6f594809-a4b4-483e-841b-0c3b0a00edfe
+< Cache-Control: no-cache, private
+< Date: Tue, 04 Oct 2022 15:24:47 GMT
 ## Faire une appel curl en envoyant une basic authentication en utilisant 2 méthodes différentes : copier les commandes exécutées et indiquer la requête et la réponse à chaque fois 
+Première méthode :
+curl -v --header x-student:RETY -u "login:password" https://webhook.site/6f594809-a4b4-483e-841b-0c3b0a00edfe 
+
+Requête :
+> GET /6f594809-a4b4-483e-841b-0c3b0a00edfe HTTP/1.1
+> Host: webhook.site
+> Authorization: Basic bG9naW46cGFzc3dvcmQ=
+> User-Agent: curl/7.82.0
+> Accept: */*
+> x-student:RETY
+
+Réponse :
+< HTTP/1.1 200 OK
+< Server: nginx
+< Content-Type: text/plain; charset=UTF-8
+< Transfer-Encoding: chunked
+< Vary: Accept-Encoding
+< X-Request-Id: e5394f27-c2d6-4f74-a4e4-35270bce59b8
+< X-Token-Id: 6f594809-a4b4-483e-841b-0c3b0a00edfe
+< Cache-Control: no-cache, private
+< Date: Tue, 04 Oct 2022 15:31:24 GMT
 
 
+Deuxièe méthode :
+curl -v --header x-student:RETY -u "login:password" https://webhook.site/6f594809-a4b4-483e-841b-0c3b0a00edfe -H "Authorization: Basic bG9naW46cGFzc3dvcmQ"
+
+Requête :
+> GET /6f594809-a4b4-483e-841b-0c3b0a00edfe HTTP/1.1
+> Host: webhook.site
+> User-Agent: curl/7.82.0
+> Accept: */*
+> x-student:RETY
+> Authorization: Basic bG9naW46cGFzc3dvcmQ
+
+Réponse :
+< HTTP/1.1 200 OK
+< Server: nginx
+< Content-Type: text/plain; charset=UTF-8
+< Transfer-Encoding: chunked
+< Vary: Accept-Encoding
+< X-Request-Id: 15eac991-a3f6-460c-97fb-085fc8a76e40
+< X-Token-Id: 6f594809-a4b4-483e-841b-0c3b0a00edfe
+< Cache-Control: no-cache, private
+< Date: Tue, 04 Oct 2022 15:32:23 GMT
 ## Exécuter la commande suivante avec la méthode GET puis indiquer la réponse : curl https://demo.api-platform.com/books/07dd4786-aaa7-4d08-a467-076b76f1d1b6 
 
-
+Ne fontionne pas, on obtient une erreur
 ## Exécuter la commande suivante avec la méthode PATCH  puis indiquer la réponse : curl https://demo.api-platform.com/top_books/1
+
+Réponse :
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <title>An Error Occurred: Method Not Allowed</title>
+    <style>body { background-color: #fff; color: #222; font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; margin: 0; }
+.container { margin: 30px; max-width: 600px; }
+h1 { color: #dc3545; font-size: 24px; }
+h2 { font-size: 18px; }</style>
+</head>
+<body>
+<div class="container">
+    <h1>Oops! An Error Occurred</h1>
+    <h2>The server returned a "405 Method Not Allowed".</h2>
+
+    <p>
+        Something is broken. Please let us know what you were doing when this error occurred.
+        We will fix it as soon as possible. Sorry for any inconvenience caused.
+    </p>
+</div>
+</body>
+</html>
 
 
 ## Quel est le code HTTP reçu ? Quel est sa signification ?
