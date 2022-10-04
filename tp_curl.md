@@ -5,24 +5,88 @@ Pour les questions suivantes, vous devez utiliser l'url suivante : https://webho
 Pour tous les appels vous devez ajouter un header pour identifier votre appel parmis ceux des autres étudiants : x-student : VOTRE_NOM
 
 ## Faire un appel curl : copier la commande exécutée et indiquer la requête et la réponse
+Commande : 
+        curl -v --header x-student:RETY https://webhook.site/6f594809-a4b4-483e-841b-0c3b0a00edfe
+
+Réponse serveur:
+< HTTP/1.1 200 OK
+< Server: nginx
+< Content-Type: text/plain; charset=UTF-8
+< Transfer-Encoding: chunked
+< Vary: Accept-Encoding
+< X-Request-Id: 99924c17-364f-4120-824b-5a58404e78c8
+< X-Token-Id: 6f594809-a4b4-483e-841b-0c3b0a00edfe
+< Cache-Control: no-cache, private
+< Date: Tue, 04 Oct 2022 14:30:30 GMT
+< 
 
 
 ## Quel est la version du protocole utilisé par le serveur ?
-
+La version du protocole HTTP utilisé est la version 1.1
 
 ## Quels sont les headers que l'on envoie dans la requête ? Quels sont leur sens ?
+Requête :
+> GET /6f594809-a4b4-483e-841b-0c3b0a00edfe HTTP/1.1
+> Host: webhook.site
+> User-Agent: curl/7.82.0
+> Accept: */*
+> x-student:RETY
+> 
 
+Le header GET permet d'acceder à la ressource
+Le header Host donne le site sur lequel on essaye de se connecter
+Le header User-Agent est notre moyen d'accès au site
+Le header Accept permet de connaitre quel type de contenu l'utilisateur peut interpreter
+Le header x-student est le header que l'on a rajouté dans le but de communiquer notre nom
 
 ## Quelles informations pouvez-vous trouver à propos du certificat SSL ?
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+* ALPN, server did not agree to a protocol
+* Server certificate:
+*  subject: CN=webhook.site
+*  start date: Jul 31 23:09:19 2022 GMT
+*  expire date: Oct 29 23:09:18 2022 GMT
+*  subjectAltName: host "webhook.site" matched cert's "webhook.site"
+*  issuer: C=US; O=Let's Encrypt; CN=R3
+*  SSL certificate verify ok.
 
+On a la date d'optention et de fin du certificat SSL, 
+le fournisseur et ceux qui ont délivrés le certificat
 
 ## Quel est le code de la réponse ? Que signifie-t-il ?
-
-
+On obtient un code 200 signifiant que c'est bien passé
 ## Quels headers recevez vous dans la response ? Quels sont leur sens ?
+< HTTP/1.1 200 OK 
 
+HTTP/1.1 : version du serveur
+200      : code de retour
+OK       : signification du code de retour
 
 ## Faire un appel curl en envoyant du texte brut : copier la commande exécutée et indiquer la requête et la réponse
+il faut utiliser le --data
+
+Commande exécutée :
+curl -v --header x-student:RETY --data "Bonjour" https://webhook.site/6f594809-a4b4-483e-841b-0c3b0a00edfe 
+
+requête :
+> POST /6f594809-a4b4-483e-841b-0c3b0a00edfe HTTP/1.1
+> Host: webhook.site
+> User-Agent: curl/7.82.0
+> Accept: */*
+> x-student:RETY
+> Content-Length: 7
+> Content-Type: application/x-www-form-urlencoded
+
+réponse :
+< HTTP/1.1 200 OK
+< Server: nginx
+< Content-Type: text/plain; charset=UTF-8
+< Transfer-Encoding: chunked
+< Vary: Accept-Encoding
+< X-Request-Id: e61b7c6d-4d30-4f8b-9829-a2fe64cc5d2f
+< X-Token-Id: 6f594809-a4b4-483e-841b-0c3b0a00edfe
+< Cache-Control: no-cache, private
+< Date: Tue, 04 Oct 2022 15:04:01 GMT
 
 
 ## Faire un appel curl en envoyant du JSON (avec les bons headers) : copier la commande exécutée et indiquer la requête et la réponse
