@@ -78,13 +78,51 @@ reponse:
 <
 
 ## Faire un appel curl en envoyant du JSON (avec les bons headers) : copier la commande exécutée et indiquer la requête et la réponse
-
+commande: curl -X POST -H "x-student: KAMARO" -H "Content-Type: application/json" --data "{"login":"my_login","password":"my_password"}" https://webhook.site/6f594809-a4b4-483e-841b-0c3b0a00edfe --verbose
+requête: 
+> POST /6f594809-a4b4-483e-841b-0c3b0a00edfe HTTP/1.1
+> Host: webhook.site
+> User-Agent: curl/7.74.0
+> Accept: */*
+> x-student: KAMARO
+> Content-Type: application/json
+> Content-Length: 37
+> 
+réponse:
+< HTTP/1.1 200 OK
+< Server: nginx
+< Content-Type: text/plain; charset=UTF-8
+< Transfer-Encoding: chunked
+< Vary: Accept-Encoding
+< X-Request-Id: 87aaf581-415f-4ce0-8769-48cc16c6935f
+< X-Token-Id: 6f594809-a4b4-483e-841b-0c3b0a00edfe
+< Cache-Control: no-cache, private
+< Date: Tue, 04 Oct 2022 15:20:26 GMT
+< 
 
 ## Faire une appel curl en envoyant une basic authentication en utilisant 2 méthodes différentes : copier les commandes exécutées et indiquer la requête et la réponse à chaque fois 
 
 
 ## Exécuter la commande suivante avec la méthode GET puis indiquer la réponse : curl https://demo.api-platform.com/books/07dd4786-aaa7-4d08-a467-076b76f1d1b6 
-
+La réponse est :
+< HTTP/2 404 
+< date: Tue, 04 Oct 2022 15:27:52 GMT
+< content-type: application/ld+json; charset=utf-8
+< content-length: 120
+< cache-control: no-cache, private
+< link: <https://demo.api-platform.com/docs.jsonld>; rel="http://www.w3.org/ns/hydra/core#apiDocumentation",<https://demo.api-platform.com/.well-known/mercure>; rel="mercure"
+< permissions-policy: browsing-topics=()
+< status: 404 Not Found
+< x-content-type-options: nosniff
+< x-frame-options: deny
+< via: 1.1 google
+< cf-cache-status: DYNAMIC
+< report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=LwxjAP%2BZEox08GTrPDzPNS6Qo99MD2cPUTvjKkr2%2FYOdH0KF5IPrCp5htr3n4WE%2FUt16id12a1NfnDkHO5ydCLeMZM%2BV7y0zCGY5CP7m85MmKFHFx8yZQ28xX0DCn9Sler1LEGIIzLE%3D"}],"group":"cf-nel","max_age":604800}
+< nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+< server: cloudflare
+< cf-ray: 754ef1b1ad219966-FRA
+< alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+< 
 
 ## Exécuter la commande suivante avec la méthode PATCH  puis indiquer la réponse : curl https://demo.api-platform.com/top_books/1
 
