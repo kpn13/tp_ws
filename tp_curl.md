@@ -63,10 +63,12 @@ Cache-Control: no-cache, private ===> Le Cash de control
 Date: Tue, 04 Oct 2022 14:54:03 GMT ===> La date de la requête
 
 ## Faire un appel curl en envoyant du texte brut : copier la commande exécutée et indiquer la requête et la réponse
-
+requête : curl https://webhook.site/6f594809-a4b4-483e-841b-0c3b0a00edfe -H "text: texte brute qui n'a aucun sens" -H"x-student: LACHEHEB"
+réponse : le message est bien passé
 
 ## Faire un appel curl en envoyant du JSON (avec les bons headers) : copier la commande exécutée et indiquer la requête et la réponse
-
+requête : curl -H "Accept: application/json" -H "Content-Type: application/json" -d "{nom:LACHEHEB}" https://webhook.site/6f594809-a4b4-483e-841b-0c3b0a00edfe
+réponse : upload est envoyé completement : 14 bytes sur 14
 
 ## Faire une appel curl en envoyant une basic authentication en utilisant 2 méthodes différentes : copier les commandes exécutées et indiquer la requête et la réponse à chaque fois 
 
