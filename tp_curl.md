@@ -102,7 +102,57 @@ GET /6f594809-a4b4-483e-841b-0c3b0a00edfe HTTP/1.1
 > x-student:Damene
 
 ## Faire un appel curl en envoyant du texte brut : copier la commande exécutée et indiquer la requête et la réponse
+curl --header "x-student:Damene" https://webhook.site/6f594809-a4b4-483e-841b-0c3b0a00edfe -d "randomtesttextbrut" -v
 
+*   Trying 46.4.105.116:443...
+* TCP_NODELAY set
+* Connected to webhook.site (46.4.105.116) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*   CAfile: /etc/ssl/certs/ca-certificates.crt
+  CApath: /etc/ssl/certs
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+* TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+* TLSv1.3 (IN), TLS handshake, Certificate (11):
+* TLSv1.3 (IN), TLS handshake, CERT verify (15):
+* TLSv1.3 (IN), TLS handshake, Finished (20):
+* TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+* TLSv1.3 (OUT), TLS handshake, Finished (20):
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+* ALPN, server did not agree to a protocol
+* Server certificate:
+*  subject: CN=webhook.site
+*  start date: Jul 31 23:09:19 2022 GMT
+*  expire date: Oct 29 23:09:18 2022 GMT
+*  subjectAltName: host "webhook.site" matched cert's "webhook.site"
+*  issuer: C=US; O=Let's Encrypt; CN=R3
+*  SSL certificate verify ok.
+> POST /6f594809-a4b4-483e-841b-0c3b0a00edfe HTTP/1.1
+> Host: webhook.site
+> User-Agent: curl/7.68.0
+> Accept: */*
+> x-student:Damene
+> Content-Length: 18
+> Content-Type: application/x-www-form-urlencoded
+>
+* upload completely sent off: 18 out of 18 bytes
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+* old SSL session ID is stale, removing
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Server: nginx
+< Content-Type: text/plain; charset=UTF-8
+< Transfer-Encoding: chunked
+< Vary: Accept-Encoding
+< X-Request-Id: 2008eccb-77b3-4251-b891-c55fac0bd11a
+< X-Token-Id: 6f594809-a4b4-483e-841b-0c3b0a00edfe
+< Cache-Control: no-cache, private
+< Date: Tue, 04 Oct 2022 15:22:14 GMT
+<
+* Connection #0 to host webhook.site left intact
 
 ## Faire un appel curl en envoyant du JSON (avec les bons headers) : copier la commande exécutée et indiquer la requête et la réponse
 
@@ -135,3 +185,6 @@ GET /6f594809-a4b4-483e-841b-0c3b0a00edfe HTTP/1.1
 
 
 ## Comment éviter cette réponse ? Trouvez 2 solutions différentes et détaillez les.
+
+
+fin de tp test repo
