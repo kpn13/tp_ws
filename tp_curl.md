@@ -293,3 +293,7 @@ The document has moved
 Le code HTTP reçu est "301 Moved Permanently". HTTP 301 Moved Permanently est un code de réponse HTTP qui est utilisé pour une redirection d'URL permanente, c'est-à-dire, pour indiquer que les liens actuels ou les enregistrements qui utilisent l'URL pour lesquels il a été recu doivent être modifiés.
 
 ## Comment éviter cette réponse ? Trouvez 2 solutions différentes et détaillez les.
+Commande 1:
+curl -v -L --post301 https://www.google.fr
+
+On peut dire à Curl de ne pas changer la méthode de requête POST pour GET.
