@@ -297,3 +297,8 @@ Commande 1:
 curl -v -L --post301 https://www.google.fr
 
 On peut dire à Curl de ne pas changer la méthode de requête POST pour GET.
+
+Commande 2:
+curl -iL --max-redirs 1 https://www.google.fr
+
+Ici on limite le nombre maximum de redirection que peut réaliser Curl.
