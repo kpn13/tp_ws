@@ -1,4 +1,5 @@
 # TP curl - comprendre les requêtes et les réponses HTTP
+# Name: UONG TRI MINH
 
 Pour les questions suivantes, vous devez utiliser l'url suivante : https://webhook.site/6f594809-a4b4-483e-841b-0c3b0a00edfe
 
@@ -123,23 +124,58 @@ response:
 
 ## Exécuter la commande suivante avec la méthode PATCH  puis indiquer la réponse : curl https://demo.api-platform.com/top_books/1
 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <title>An Error Occurred: Method Not Allowed</title>
+    <style>body { background-color: #fff; color: #222; font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; margin: 0; }
+.container { margin: 30px; max-width: 600px; }
+h1 { color: #dc3545; font-size: 24px; }
+h2 { font-size: 18px; }</style>
+</head>
+<body>
+<div class="container">
+    <h1>Oops! An Error Occurred</h1>
+    <h2>The server returned a "405 Method Not Allowed".</h2>
+
+    <p>
+        Something is broken. Please let us know what you were doing when this error occurred.
+        We will fix it as soon as possible. Sorry for any inconvenience caused.
+    </p>
+</div>
+</body>
+* Connection #0 to host demo.api-platform.com left intact
+</html>
 
 ## Quel est le code HTTP reçu ? Quel est sa signification ?
-
+code : 405
+meaning: PATH method is not allowed in this api url
 
 ## Exécuter la commande suivante puis indiquer la réponse : curl https://demo.api-platform.com/top_books/1
-
+{"@context":"\/contexts\/TopBook","@id":"\/top_books\/1","@type":"TopBook","id":1,"title":"Depuis l\u0027au-delà","author":"Werber Bernard","part":"","place":"F WER","borrowCount":9}
 
 ## Exécuter la commande suivante puis indiquer la réponse : curl https://demo.api-platform.com/top_books/9999
-
+{"@context":"\/contexts\/Error","@type":"hydra:Error","hydra:title":"An error occurred","hydra:description":"Not Found"}
 
 ## Quel est le code HTTP ? Que signifie-t-il ?
-
+code: 404
+meaning: resource not foud
 
 ## Exécuter la requête suivante et copier la réponse : curl https://google.fr
+
+<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
+<TITLE>301 Moved</TITLE></HEAD><BODY>
+<H1>301 Moved</H1>
+The document has moved
+<A HREF="https://www.google.fr/">here</A>.
+</BODY></HTML>
 
 
 ## Quel est le code HTTP reçu ? Pouvez-vous expliquer cette réponse ?
 
+code: 301
+meaning: request is redirected
 
 ## Comment éviter cette réponse ? Trouvez 2 solutions différentes et détaillez les.
