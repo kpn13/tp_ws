@@ -5,25 +5,77 @@ Pour les questions suivantes, vous devez utiliser l'url suivante : https://webho
 Pour tous les appels vous devez ajouter un header pour identifier votre appel parmis ceux des autres étudiants : x-student : VOTRE_NOM
 
 ## Faire un appel curl : copier la commande exécutée et indiquer la requête et la réponse
+La commande exécutée est curl --verbose --header "x-student : KAMARO" https://webhook.site/6f594809-a4b4-483e-841b-0c3b0a00edfe 
+La requête est: 
+> GET /6f594809-a4b4-483e-841b-0c3b0a00edfe HTTP/1.1
+> Host: webhook.site
+> User-Agent: curl/7.74.0
+> Accept: */*
+> x-student: KAMARO
+> 
+la reponse est:
+< HTTP/1.1 200 OK
+< Server: nginx
+< Content-Type: text/plain; charset=UTF-8
+< Transfer-Encoding: chunked
+< Vary: Accept-Encoding
+< X-Request-Id: 352ea799-e56c-4ff5-9f89-44769f2316fc
+< X-Token-Id: 6f594809-a4b4-483e-841b-0c3b0a00edfe
+< Cache-Control: no-cache, private
+< Date: Tue, 04 Oct 2022 14:29:16 GMT
+< 
 
 
 ## Quel est la version du protocole utilisé par le serveur ?
-
+Le serveur utilise la version 1.1
 
 ## Quels sont les headers que l'on envoie dans la requête ? Quels sont leur sens ?
-
+Les headers envoyés sont:
+> GET /6f594809-a4b4-483e-841b-0c3b0a00edfe HTTP/1.1 : qui precise le type de requête envoyé, la page souhaité et le protocole souhaitée
+> Host: webhook.site : precise le site d'hebergement de la ressource
+> User-Agent: curl/7.74.0 : precise l'interface utilisé
+> Accept: */* : precise le type de données que le client accepte
+> x-student: KAMARO : precise l'identifiant du client de la requête
 
 ## Quelles informations pouvez-vous trouver à propos du certificat SSL ?
-
+le certificat ssl utilisé est CAfile: /etc/ssl/certs/ca-certificates.crt et utilise le TSL version 1.3
 
 ## Quel est le code de la réponse ? Que signifie-t-il ?
-
+le code de la réponse est 200 est signifie que la requête est reussie
 
 ## Quels headers recevez vous dans la response ? Quels sont leur sens ?
-
+< HTTP/1.1 200 OK : code de la reponse
+< Server: nginx : serveur hebergeant le site
+< Content-Type: text/plain; charset=UTF-8 : codage de la page
+< Transfer-Encoding: chunked : mecanisme de transfert des données
+< Vary: Accept-Encoding : informe les navigateurs si le client peut gérer la version compressée du site web.
+< X-Request-Id: 378afa0a-b4c0-4d09-94f5-4a5cd2d03910 : identifiant de la requête
+< X-Token-Id: 6f594809-a4b4-483e-841b-0c3b0a00edfe : identifiant de la page
+< Cache-Control: no-cache, private : controleur du cache de la page
+< Date: Tue, 04 Oct 2022 14:44:43 GMT : date et heure de la reque
 
 ## Faire un appel curl en envoyant du texte brut : copier la commande exécutée et indiquer la requête et la réponse
-
+commande exécutée: curl -X POST -H "x-student: KAMARO" -H "Content-Type: text/plain" --data "this is raw data" https://webhook.site/6f594809-a4b4-483e-841b-0c3b0a00edfe --verbose
+requête: 
+> POST /6f594809-a4b4-483e-841b-0c3b0a00edfe HTTP/1.1
+> Host: webhook.site
+> User-Agent: curl/7.74.0
+> Accept: */*
+> x-student: KAMARO
+> Content-Type: text/plain
+> Content-Length: 16
+> 
+reponse:
+< HTTP/1.1 200 OK
+< Server: nginx
+< Content-Type: text/plain; charset=UTF-8
+< Transfer-Encoding: chunked
+< Vary: Accept-Encoding
+< X-Request-Id: bbfec9a3-9ded-4f0e-ac79-9a9aa7005079
+< X-Token-Id: 6f594809-a4b4-483e-841b-0c3b0a00edfe
+< Cache-Control: no-cache, private
+< Date: Tue, 04 Oct 2022 15:06:39 GMT
+<
 
 ## Faire un appel curl en envoyant du JSON (avec les bons headers) : copier la commande exécutée et indiquer la requête et la réponse
 
