@@ -115,32 +115,100 @@ curl -X POST \
 
 ## Faire une appel curl en envoyant une basic authentication en utilisant 2 méthodes différentes : copier les commandes exécutées et indiquer la requête et la réponse à chaque fois 
 
-curl -u utilisateur:motdepasse https://webhook.site/6f594809-a4b4-483e-841b-0c3b0a00edfe
+Méthode 1:
 
-curl -d "username=admin&password=admin&submit=Login" https://webhook.site/6f594809-a4b4-483e-841b-0c3b0a00edfe
+curl -v -H "x-student:Combettes" -u "utilisateur:motdepasse" https://webhook.site/6f594809-a4b4-483e-841b-0c3b0a00edfe
+
+> GET /6f594809-a4b4-483e-841b-0c3b0a00edfe HTTP/1.1
+> Host: webhook.site
+> Authorization: Basic dXRpbGlzYXRldXI6bW90ZGVwYXNzZQ==
+> User-Agent: curl/7.68.0
+> Accept: */*
+> x-student:Combettes
+> 
+
+< HTTP/1.1 200 OK
+< Server: nginx
+< Content-Type: text/plain; charset=UTF-8
+< Transfer-Encoding: chunked
+< Vary: Accept-Encoding
+< X-Request-Id: eb23e1c5-9b2c-470b-ab19-eb41fa0bce51
+< X-Token-Id: 6f594809-a4b4-483e-841b-0c3b0a00edfe
+< Cache-Control: no-cache, private
+< Date: Tue, 04 Oct 2022 15:12:13 GMT
+< 
+
+Méthode 2:
+curl https://webhook.site/6f594809-a4b4-483e-841b-0c3b0a00edfe -v -H "x-student:Combettes"  -H "Authorization: Basic bG9naW46cGFzc3dvcmQ"
+
+> GET /6f594809-a4b4-483e-841b-0c3b0a00edfe HTTP/1.1
+> Host: webhook.site
+> User-Agent: curl/7.68.0
+> Accept: */*
+> x-student:Combettes
+> Authorization: Basic bG9naW46cGFzc3dvcmQ
+> 
+
+< HTTP/1.1 200 OK
+< Server: nginx
+< Content-Type: text/plain; charset=UTF-8
+< Transfer-Encoding: chunked
+< Vary: Accept-Encoding
+< X-Request-Id: 75f587ce-76aa-4a74-92c6-58b84c4be82e
+< X-Token-Id: 6f594809-a4b4-483e-841b-0c3b0a00edfe
+< Cache-Control: no-cache, private
+< Date: Tue, 04 Oct 2022 15:17:54 GMT
+< 
+
+
+
 
 ## Exécuter la commande suivante avec la méthode GET puis indiquer la réponse : curl https://demo.api-platform.com/books/07dd4786-aaa7-4d08-a467-076b76f1d1b6 
+ 
 
+curl -i -H "Cache-Control: must-revalidate"  -H "Pragma: no-cache"  -H "Expires: 0" https://demo.api-platform.com/books/07dd4786-aaa7-4d08-a467-076b76f1d1b6 
+
+ne marche pas
 
 ## Exécuter la commande suivante avec la méthode PATCH  puis indiquer la réponse : curl https://demo.api-platform.com/top_books/1
 
+curl -v --data "test" -X PATCH https://demo.api-platform.com/top_books/1
+
+Erreur 405 il n'acceptes pas la méthode.
 
 ## Quel est le code HTTP reçu ? Quel est sa signification ?
 
+Que je n'ai pas le droit de patcher le site.
 
 ## Exécuter la commande suivante puis indiquer la réponse : curl https://demo.api-platform.com/top_books/1
+
+{"@context":"\/contexts\/TopBook","@id":"\/top_books\/1","@type":"TopBook","id":1,"title":"Depuis l\u0027au-delà","author":"Werber Bernard","part":"","place":"F WER","borrowCount":9}
 
 
 ## Exécuter la commande suivante puis indiquer la réponse : curl https://demo.api-platform.com/top_books/9999
 
+{"@context":"\/contexts\/Error","@type":"hydra:Error","hydra:title":"An error occurred","hydra:description":"Not Found"}
 
 ## Quel est le code HTTP ? Que signifie-t-il ?
 
+404 car la page n'existe pas
 
 ## Exécuter la requête suivante et copier la réponse : curl https://google.fr
+
+<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
+<TITLE>301 Moved</TITLE></HEAD><BODY>
+<H1>301 Moved</H1>
+The document has moved
+<A HREF="https://www.google.fr/">here</A>.
+</BODY></HTML>
 
 
 ## Quel est le code HTTP reçu ? Pouvez-vous expliquer cette réponse ?
 
+301 c'est une redirection d'url
 
 ## Comment éviter cette réponse ? Trouvez 2 solutions différentes et détaillez les.
+
+curl -L https://google.fr -v 
+
+curl -v https://www.google.com/ 
