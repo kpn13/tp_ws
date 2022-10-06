@@ -142,16 +142,204 @@ Le code recu est le 405 --> methode non DISPONIBLE
 ## Exécuter la commande suivante puis indiquer la réponse : curl https://demo.api-platform.com/top_books/1
 
 
-## Exécuter la commande suivante puis indiquer la réponse : curl https://demo.api-platform.com/top_books/9999
+ le reponse : 
+*   Trying 104.21.20.121:443...
+* Connected to demo.api-platform.com (104.21.20.121) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*  CAfile: /etc/ssl/certs/ca-certificates.crt
+*  CApath: /etc/ssl/certs
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+* TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+* TLSv1.3 (IN), TLS handshake, Certificate (11):
+* TLSv1.3 (IN), TLS handshake, CERT verify (15):
+* TLSv1.3 (IN), TLS handshake, Finished (20):
+* TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+* TLSv1.3 (OUT), TLS handshake, Finished (20):
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+* ALPN, server accepted to use h2
+* Server certificate:
+*  subject: C=US; ST=California; L=San Francisco; O=Cloudflare, Inc.; CN=sni.cloudflaressl.com
+*  start date: Jun 11 00:00:00 2022 GMT
+*  expire date: Jun 11 23:59:59 2023 GMT
+*  subjectAltName: host "demo.api-platform.com" matched cert's "*.api-platform.com"
+*  issuer: C=US; O=Cloudflare, Inc.; CN=Cloudflare Inc ECC CA-3
+*  SSL certificate verify ok.
+* Using HTTP2, server supports multi-use
+* Connection state changed (HTTP/2 confirmed)
+* Copying HTTP/2 data in stream buffer to connection buffer after upgrade: len=0
+* Using Stream ID: 1 (easy handle 0x55e9669df990)
+> GET /top_books/1 HTTP/2
+> Host: demo.api-platform.com
+> user-agent: curl/7.74.0
+> accept: */*
+> 
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+* old SSL session ID is stale, removing
+* Connection state changed (MAX_CONCURRENT_STREAMS == 256)!
+< HTTP/2 200 
+< date: Thu, 06 Oct 2022 14:01:36 GMT
+< content-type: application/ld+json; charset=utf-8
+< content-length: 183
+< cache-control: no-cache, private
+< etag: "06a23177dff31429d2a7390117fe1b2d"
+< link: <https://demo.api-platform.com/docs.jsonld>; rel="http://www.w3.org/ns/hydra/core#apiDocumentation"
+< permissions-policy: browsing-topics=()
+< vary: Accept
+< vary: Content-Type
+< vary: Authorization
+< vary: Origin
+< x-content-type-options: nosniff
+< x-frame-options: deny
+< via: 1.1 google
+< cf-cache-status: DYNAMIC
+< report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=LIZ%2B9H%2Bx4aMQ6fRBgNuen5gzIdvORtlctouOKMaPYi3ES2a9W1X3Ebwv2UlPXxN7U%2BHLzars%2Bu9DxmkVwDMPobnwOJ7zvCVD03cz6kzDAYgXtT5iZZrCy9u1IP90aL%2FCaavA%2Bg7YMNQ%3D"}],"group":"cf-nel","max_age":604800}
+< nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+< server: cloudflare
+< cf-ray: 755eee123f0b9c06-FRA
+< alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+< 
+* Connection #0 to host demo.api-platform.com left intact
+{"@context":"\/contexts\/TopBook","@id":"\/top_books\/1","@type":"TopBook","id":1,"title":"Depuis l\u0027au-delà","author":"Werber Bernard","part":"","place":"F WER","borrowCount":9}
 
+
+
+## Exécuter la commande suivante puis indiquer la réponse : curl https://demo.api-platform.com/top_books/9999
+  
+  le reponse : 
+  
+   Trying 104.21.20.121:443...
+* Connected to demo.api-platform.com (104.21.20.121) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*  CAfile: /etc/ssl/certs/ca-certificates.crt
+*  CApath: /etc/ssl/certs
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+* TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+* TLSv1.3 (IN), TLS handshake, Certificate (11):
+* TLSv1.3 (IN), TLS handshake, CERT verify (15):
+* TLSv1.3 (IN), TLS handshake, Finished (20):
+* TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+* TLSv1.3 (OUT), TLS handshake, Finished (20):
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+* ALPN, server accepted to use h2
+* Server certificate:
+*  subject: C=US; ST=California; L=San Francisco; O=Cloudflare, Inc.; CN=sni.cloudflaressl.com
+*  start date: Jun 11 00:00:00 2022 GMT
+*  expire date: Jun 11 23:59:59 2023 GMT
+*  subjectAltName: host "demo.api-platform.com" matched cert's "*.api-platform.com"
+*  issuer: C=US; O=Cloudflare, Inc.; CN=Cloudflare Inc ECC CA-3
+*  SSL certificate verify ok.
+* Using HTTP2, server supports multi-use
+* Connection state changed (HTTP/2 confirmed)
+* Copying HTTP/2 data in stream buffer to connection buffer after upgrade: len=0
+* Using Stream ID: 1 (easy handle 0x563a0f066990)
+> GET /top_books/9999 HTTP/2
+> Host: demo.api-platform.com
+> user-agent: curl/7.74.0
+> accept: */*
+> 
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+* old SSL session ID is stale, removing
+* Connection state changed (MAX_CONCURRENT_STREAMS == 256)!
+< HTTP/2 404 
+< date: Thu, 06 Oct 2022 14:06:02 GMT
+< content-type: application/ld+json; charset=utf-8
+< content-length: 120
+< cache-control: no-cache, private
+< link: <https://demo.api-platform.com/docs.jsonld>; rel="http://www.w3.org/ns/hydra/core#apiDocumentation"
+< permissions-policy: browsing-topics=()
+< status: 404 Not Found
+< x-content-type-options: nosniff
+< x-frame-options: deny
+< via: 1.1 google
+< cf-cache-status: DYNAMIC
+< report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=mYjbkvbDatA6h7tcIOcRgx8vZZx5Us3Zm%2F6WGqIEytmF2T7uQOuKj%2FQPRcYfY7LsDp86jiL1g2qYyuA8f89mPay4aK8zJZZuXYdWnV6ORxTlyPo%2FR6nJgEytSsXo4kZVDD8D2pP5UC4%3D"}],"group":"cf-nel","max_age":604800}
+< nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+< server: cloudflare
+< cf-ray: 755ef493c82b9b28-FRA
+< alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+< 
+* Connection #0 to host demo.api-platform.com left intact
+{"@context":"\/contexts\/Error","@type":"hydra:Error","hydra:title":"An error occurred","hydra:description":"Not Found"}
 
 ## Quel est le code HTTP ? Que signifie-t-il ?
 
+le code : HTTP/2 404 
+signifie que le ressources est indisponible ou que le serveur n'arrive pas a y acceder 
 
 ## Exécuter la requête suivante et copier la réponse : curl https://google.fr
+
+le reponse : 
+*   Trying 142.250.203.227:443...
+* Connected to google.fr (142.250.203.227) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*  CAfile: /etc/ssl/certs/ca-certificates.crt
+*  CApath: /etc/ssl/certs
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+* TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+* TLSv1.3 (IN), TLS handshake, Certificate (11):
+* TLSv1.3 (IN), TLS handshake, CERT verify (15):
+* TLSv1.3 (IN), TLS handshake, Finished (20):
+* TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+* TLSv1.3 (OUT), TLS handshake, Finished (20):
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+* ALPN, server accepted to use h2
+* Server certificate:
+*  subject: CN=*.google.fr
+*  start date: Sep 12 08:20:37 2022 GMT
+*  expire date: Dec  5 08:20:36 2022 GMT
+*  subjectAltName: host "google.fr" matched cert's "google.fr"
+*  issuer: C=US; O=Google Trust Services LLC; CN=GTS CA 1C3
+*  SSL certificate verify ok.
+* Using HTTP2, server supports multi-use
+* Connection state changed (HTTP/2 confirmed)
+* Copying HTTP/2 data in stream buffer to connection buffer after upgrade: len=0
+* Using Stream ID: 1 (easy handle 0x555ec6d7d990)
+> GET / HTTP/2
+> Host: google.fr
+> user-agent: curl/7.74.0
+> accept: */*
+> 
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+* old SSL session ID is stale, removing
+* Connection state changed (MAX_CONCURRENT_STREAMS == 100)!
+< HTTP/2 301 
+< location: https://www.google.fr/
+< content-type: text/html; charset=UTF-8
+< date: Thu, 06 Oct 2022 14:03:44 GMT
+< expires: Thu, 06 Oct 2022 14:03:44 GMT
+< cache-control: private, max-age=2592000
+< server: gws
+< content-length: 219
+< x-xss-protection: 0
+< x-frame-options: SAMEORIGIN
+< set-cookie: CONSENT=PENDING+635; expires=Sat, 05-Oct-2024 14:03:44 GMT; path=/; domain=.google.fr; Secure
+< p3p: CP="This is not a P3P policy! See g.co/p3phelp for more info."
+< alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+< 
+<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
+<TITLE>301 Moved</TITLE></HEAD><BODY>
+<H1>301 Moved</H1>
+The document has moved
+<A HREF="https://www.google.fr/">here</A>.
+</BODY></HTML>
+* Connection #0 to host google.fr left intact
 
 
 ## Quel est le code HTTP reçu ? Pouvez-vous expliquer cette réponse ?
 
+l'erreur : HTTP/2 301 
+la signification : le contenu de la page n'est pas accessible avec l'url donnée 
 
 ## Comment éviter cette réponse ? Trouvez 2 solutions différentes et détaillez les.
