@@ -401,6 +401,7 @@ The document has moved
 
 ## Comment éviter cette réponse ? Trouvez 2 solutions différentes et détaillez les.
 
-**solutions** :  curl -L https://google.fr
-
+**solutions** :  
+*1* curl -L https://google.fr
+*2* 
 
