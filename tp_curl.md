@@ -522,6 +522,24 @@ la signification : le contenu de la page n'est pas accessible avec l'url donnée
 ## Comment éviter cette réponse ? Trouvez 2 solutions différentes et détaillez les.
 
 
+solution 1: 
+
+curl -l https://google.fr
+
+
+<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
+<TITLE>301 Moved</TITLE></HEAD><BODY>
+<H1>301 Moved</H1>
+The document has moved
+<A HREF="https://www.google.fr/">here</A>.
+</BODY></HTML>
+
+
+solution 2 : 
+on cherche un nouveau lien 
+
+curl -v https://www.google.com/
+
 
 
 
