@@ -7,7 +7,15 @@ Pour tous les appels vous devez ajouter un header pour identifier votre appel pa
 ## Faire un appel curl : copier la commande exécutée et indiquer la requête et la réponse
 curl -H "x-student:RachdiChemseddine" -v https://webhook.site/d4ec90aa-8173-48dd-8414-6fb832ea2a26 
 
-**Requete** : GET /d4ec90aa-8173-48dd-8414-6fb832ea2a26 HTTP/1.1
+**Requete** : 
+> GET /d4ec90aa-8173-48dd-8414-6fb832ea2a26 HTTP/1.1
+> Host: webhook.site
+> User-Agent: curl/7.74.0
+> Accept: */*
+> x-student:RachdiChemseddine
+> 
+
+
 **Reponse** : 
 < HTTP/1.1 410 Gone
 < Server: nginx
@@ -47,7 +55,7 @@ HTTP 1.1
 
 
 ## Quels sont les headers que l'on envoie dans la requête ? Quels sont leur sens ?
-> GET /d4ec90aa-8173-48dd-8414-6fb832ea2a26 HTTP/1.1
+
 > Host: webhook.site
 > User-Agent: curl/7.74.0
 > Accept: */*
@@ -55,18 +63,20 @@ HTTP 1.1
 
 
 ## Quelles informations pouvez-vous trouver à propos du certificat SSL ?
+
 SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
 
 
 
 ## Quel est le code de la réponse ? Que signifie-t-il ?
-**Code** : 400
-**Signification** : requete invalide.
+
+**Code** : 410
+**Signification** : l'accès à la ressource n'est plus disponible sur le serveur.
 
 
 
 ## Quels headers recevez vous dans la response ? Quels sont leur sens ?
-< HTTP/1.1 200 OK
+
 < Server: nginx
 < Content-Type: text/plain; charset=UTF-8
 < Transfer-Encoding: chunked
@@ -78,10 +88,21 @@ SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
 
 
 ## Faire un appel curl en envoyant du texte brut : copier la commande exécutée et indiquer la requête et la réponse
-curl  POST "TextBrute" -H "x-student:RachdiChemseddine" -v https://webhook.site/d4ec90aa-8173-48dd-8414-6fb832ea2a26
 
-**Requete** : GET /d4ec90aa-8173-48dd-8414-6fb832ea2a26 HTTP/1.1
+curl -X POST -H "Content-Type: text/plain" "TextBrute" -v https://webhook.site/d4ec90aa-8173-48dd-8414-6fb832ea2a26
+
+**Requete** : 
+
+> POST /d4ec90aa-8173-48dd-8414-6fb832ea2a26 HTTP/1.1
+> Host: webhook.site
+> User-Agent: curl/7.74.0
+> Accept: */*
+> Content-Type: text/plain
+> 
+
+
 **Reponse** : 
+
 < HTTP/1.1 410 Gone
 < Server: nginx
 < Content-Type: text/html; charset=UTF-8
@@ -115,9 +136,18 @@ curl  POST "TextBrute" -H "x-student:RachdiChemseddine" -v https://webhook.site/
 
 
 ## Faire un appel curl en envoyant du JSON (avec les bons headers) : copier la commande exécutée et indiquer la requête et la réponse
-curl --request POST --data '{"username":"chems","password":"123"}' -H "x-student:RachdiChemseddine" -v https://webhook.site/d4ec90aa-8173-48dd-8414-6fb832ea2a26
+curl -X POST -H 'Content-Type: application/json' --data '{"username":"chems","password":"123"}' -v https://webhook.site/d4ec90aa-8173-48dd-8414-6fb832ea2a26
 
-**Requete** : POST /d4ec90aa-8173-48dd-8414-6fb832ea2a26 HTTP/1.1
+**Requete** : 
+
+> POST /d4ec90aa-8173-48dd-8414-6fb832ea2a26 HTTP/1.1
+> Host: webhook.site
+> User-Agent: curl/7.74.0
+> Accept: */*
+> Content-Type: application/json
+> Content-Length: 37
+> 
+
 **Reponse** :
 < HTTP/1.1 410 Gone
 < Server: nginx
@@ -153,9 +183,21 @@ curl --request POST --data '{"username":"chems","password":"123"}' -H "x-student
 
 
 ## Faire une appel curl en envoyant une basic authentication en utilisant 2 méthodes différentes : copier les commandes exécutées et indiquer la requête et la réponse à chaque fois 
+
 curl -X POST -u "chems:123" -H "x-student:RachdiChemseddine" -v https://webhook.site/d4ec90aa-8173-48dd-8414-6fb832ea2a26
 
-**Requete** : POST /d4ec90aa-8173-48dd-8414-6fb832ea2a26 HTTP/1.1
+curl https://webhook.site/d4ec90aa-8173-48dd-8414-6fb832ea2a26 -H "Authorization:Basic 123"
+
+**Requete** : 
+
+> POST /d4ec90aa-8173-48dd-8414-6fb832ea2a26 HTTP/1.1
+> Host: webhook.site
+> Authorization: Basic Y2hlbXM6MTIz
+> User-Agent: curl/7.74.0
+> Accept: */*
+> x-student:RachdiChemseddine
+
+
 **Reponse** : 
 < HTTP/1.1 410 Gone
 < Server: nginx
@@ -216,29 +258,45 @@ curl -X POST -u "chems:123" -H "x-student:RachdiChemseddine" -v https://webhook.
 ## Exécuter la commande suivante avec la méthode PATCH  puis indiquer la réponse : curl https://demo.api-platform.com/top_books/1
 
 **reponse** : 
-< HTTP/2 200 
-< date: Fri, 30 Sep 2022 11:26:34 GMT
-< content-type: application/ld+json; charset=utf-8
-< content-length: 183
+< date: Thu, 06 Oct 2022 14:32:18 GMT
+< content-type: text/html; charset=UTF-8
+< allow: GET
 < cache-control: no-cache, private
-< etag: "06a23177dff31429d2a7390117fe1b2d"
 < link: <https://demo.api-platform.com/docs.jsonld>; rel="http://www.w3.org/ns/hydra/core#apiDocumentation"
-< vary: Accept
-< vary: Content-Type
-< vary: Authorization
-< vary: Origin
-< x-content-type-options: nosniff
-< x-frame-options: deny
+< permissions-policy: browsing-topics=()
+< status: 405 Method Not Allowed
 < via: 1.1 google
 < cf-cache-status: DYNAMIC
-< report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=kEyX0GAH3DpgLdeUsw6m%2FOcDRd1AOVje29AYZ%2BRtihwMtBcOvGJEubpichPIAPN2gDXPF53O7CwRF4gTv3ee2%2BV0QEDnsPvaXmBfXeckWBdosbJ%2BTFyKbsykLtNSlJ6lvmOn6qGJ6Oc%3D"}],"group":"cf-nel","max_age":604800}
+< report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=sAg8I6lB3ORvW%2BCT3bKHQk44XqLQx%2FTaEG3MQV3RctjziZV8SAon5Mq8EsthhDBUj37XeJmwtoZo6iBXknLcfmUCCS%2F1wZD%2BEhFtAEOtyTWgUVzxD5eMFTsNIgFbWSDQ02ILfG2dP50%3D"}],"group":"cf-nel","max_age":604800}
 < nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
 < server: cloudflare
-< cf-ray: 752c9ab9ab4a993f-FRA
+< cf-ray: 755f1b0bda905995-MXP
 < alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
 < 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <title>An Error Occurred: Method Not Allowed</title>
+    <style>body { background-color: #fff; color: #222; font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; margin: 0; }
+.container { margin: 30px; max-width: 600px; }
+h1 { color: #dc3545; font-size: 24px; }
+h2 { font-size: 18px; }</style>
+</head>
+<body>
+<div class="container">
+    <h1>Oops! An Error Occurred</h1>
+    <h2>The server returned a "405 Method Not Allowed".</h2>
+
+    <p>
+        Something is broken. Please let us know what you were doing when this error occurred.
+        We will fix it as soon as possible. Sorry for any inconvenience caused.
+    </p>
+</div>
+</body>
 * Connection #0 to host demo.api-platform.com left intact
-{"@context":"\/contexts\/TopBook","@id":"\/top_books\/1","@type":"TopBook","id":1,"title":"Depuis l\u0027au-delà","author":"Werber Bernard","part":"","place":"F WER","borrowCount":9} 
+</html>  
 
 
 
