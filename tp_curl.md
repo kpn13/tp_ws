@@ -188,7 +188,7 @@ curl -X POST -u "chems:123" -H "x-student:RachdiChemseddine" -v https://webhook.
 </html>
 
 
-## Exécuter la commande suivante avec la méthode GET puis indiquer la réponse : curl https://demo.api-platform.com/books/07dd4786-aaa7-4d08-a467-076b76f1d1b6 
+## Exécuter la commande suivante avec la méthode GET puis indiquer la réponse :  
 
 **reponse** :
 < HTTP/2 404 
@@ -245,7 +245,7 @@ curl -X POST -u "chems:123" -H "x-student:RachdiChemseddine" -v https://webhook.
 ## Quel est le code HTTP reçu ? Quel est sa signification ?
 
 **code** : 405
-**Signification** :
+**Signification** : Method not allowed (la méthode HTTP n'est pas autorisée par le serveur)
 
 
 
@@ -305,7 +305,7 @@ curl -X POST -u "chems:123" -H "x-student:RachdiChemseddine" -v https://webhook.
 ## Quel est le code HTTP ? Que signifie-t-il ?
 
 **Code** : 404
-**Signification** : page not found
+**Signification** : page not found.
 
 
 
@@ -337,10 +337,12 @@ The document has moved
 ## Quel est le code HTTP reçu ? Pouvez-vous expliquer cette réponse ?
 
 **Code** : 301
-**Signification** :
+**Signification** : indique que le contenu de la page n'est plus disponible à l'URL renseignée
 
 
 
 ## Comment éviter cette réponse ? Trouvez 2 solutions différentes et détaillez les.
 
-**solutions** :
+**solutions** :  curl -L https://google.fr
+
+
