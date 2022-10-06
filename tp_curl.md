@@ -176,22 +176,144 @@ curl -v https://webhook.site/37f00faa-5d4f-4572-97a8-2db3c5b785c5 -H "x-student:
 
 ## Exécuter la commande suivante avec la méthode GET puis indiquer la réponse : curl https://demo.api-platform.com/books/07dd4786-aaa7-4d08-a467-076b76f1d1b6 
 
--H "User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.112 Safari/535.1"
+
+```sh
+> GET /books/07dd4786-aaa7-4d08-a467-076b76f1d1b6 HTTP/1.1
+> Host: demo.api-platform.com
+> User-Agent: curl/7.83.1
+> Accept: */*
+
+
+< HTTP/1.1 404 Not Found
+< Date: Thu, 06 Oct 2022 14:22:47 GMT
+< Content-Type: application/ld+json; charset=utf-8
+< Content-Length: 120
+< Connection: keep-alive
+< Cache-Control: no-cache, private
+< Link: <https://demo.api-platform.com/docs.jsonld>; rel="http://www.w3.org/ns/hydra/core#apiDocumentation",<https://demo.api-platform.com/.well-known/mercure>; rel="mercure"
+< Permissions-Policy: browsing-topics=()
+< Status: 404 Not Found
+< X-Content-Type-Options: nosniff
+< X-Frame-Options: deny
+< Via: 1.1 google
+< CF-Cache-Status: DYNAMIC
+< Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=sx6U%2BEvUfpsBGe7wEXk%2F3qORhNIlY0xJJepidCqA4djYCiiM9OIMhIaK%2Bx4is3qXjVmpNkZxwQtuSNXC0EIWZLa1PpXv9B%2BRXg26W7eH6oevHSAzFxbTZ%2FvOS2L1nu%2FDB1Ex16qOVjc%3D"}],"group":"cf-nel","max_age":604800}
+< NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+< Server: cloudflare
+< CF-RAY: 755f0d1bbb815995-MXP
+< alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+<
+{"@context":"\/contexts\/Error","@type":"hydra:Error","hydra:title":"An error occurred","hydra:description":"Not Found"}* Connection #0 to host demo.api-platform.com left intact
+```
 
 ## Exécuter la commande suivante avec la méthode PATCH  puis indiquer la réponse : curl https://demo.api-platform.com/top_books/1
+
+```sh
+curl --request PATCH https://demo.api-platform.com/top_books/1 -v
+
+> PATCH /top_books/1 HTTP/1.1
+> Host: demo.api-platform.com
+> User-Agent: curl/7.83.1
+> Accept: */*
+
+
+< HTTP/1.1 405 Method Not Allowed
+< Date: Thu, 06 Oct 2022 14:26:36 GMT
+< Content-Type: text/html; charset=UTF-8
+< Transfer-Encoding: chunked
+< Connection: keep-alive
+< Allow: GET
+< Cache-Control: no-cache, private
+< Link: <https://demo.api-platform.com/docs.jsonld>; rel="http://www.w3.org/ns/hydra/core#apiDocumentation"
+< Permissions-Policy: browsing-topics=()
+< Status: 405 Method Not Allowed
+< Via: 1.1 google
+< CF-Cache-Status: DYNAMIC
+< Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=uGlJLHTIL4a8bBYLDYm2IFgtx6oJ5%2FGusPqFy1vYWHdJ5LUms%2FEQeb6i4UI5Ws6I06YIOkGu%2FuCLolyLZwqA36VqypO6v9l57Bj85WFZ6hLGXMgFXlSOv8ThXl1EPbi1KFzN4%2FIKIk0%3D"}],"group":"cf-nel","max_age":604800}
+< NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+< Server: cloudflare
+< CF-RAY: 755f12b02cd783ba-MXP
+< alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+
+```
 
 
 ## Quel est le code HTTP reçu ? Quel est sa signification ?
 
+Le code reçu est 405 Method Not Allowed, il indique que la méthode utilisée pour la requête est connue du serveur mais qu'elle n'est pas supportée par la ressource ciblée.
 
 ## Exécuter la commande suivante puis indiquer la réponse : curl https://demo.api-platform.com/top_books/1
+
+```sh
+> GET /top_books/1 HTTP/1.1
+> Host: demo.api-platform.com
+> User-Agent: curl/7.83.1
+> Accept: */*
+
+
+
+< HTTP/1.1 200 OK
+< Date: Thu, 06 Oct 2022 14:30:54 GMT
+< Content-Type: application/ld+json; charset=utf-8
+< Content-Length: 183
+< Connection: keep-alive
+< Cache-Control: no-cache, private
+< Etag: "06a23177dff31429d2a7390117fe1b2d"
+< Link: <https://demo.api-platform.com/docs.jsonld>; rel="http://www.w3.org/ns/hydra/core#apiDocumentation"
+< Permissions-Policy: browsing-topics=()
+< Vary: Accept
+< Vary: Content-Type
+< Vary: Authorization
+< Vary: Origin
+< X-Content-Type-Options: nosniff
+< X-Frame-Options: deny
+< Via: 1.1 google
+< CF-Cache-Status: DYNAMIC
+< Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=9tBmJ7KYmG9KGeXpocu1rhMCqzqQLGNEZkxBvsmKJypDELRLoyAFrbxvFBZnUDZIAFNdHRUQZHvqyfEZxI%2BwhP8ti2nTd7m7UFqxt0ksLpudeTf409RVBrfPA%2B3ozVoWhhZvByT5nlc%3D"}],"group":"cf-nel","max_age":604800}
+< NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+< Server: cloudflare
+< CF-RAY: 755f18fdbe6a3759-MXP
+< alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+<
+{"@context":"\/contexts\/TopBook","@id":"\/top_books\/1","@type":"TopBook","id":1,"title":"Depuis l\u0027au-delà","author":"Werber Bernard","part":"","place":"F WER","borrowCount":9}* Connection #0 to host demo.api-platform.com left intact
+```
 
 
 ## Exécuter la commande suivante puis indiquer la réponse : curl https://demo.api-platform.com/top_books/9999
 
+```sh
+> GET /top_books/9999 HTTP/1.1
+> Host: demo.api-platform.com
+> User-Agent: curl/7.83.1
+> Accept: */*
+>
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 404 Not Found
+< Date: Thu, 06 Oct 2022 14:33:05 GMT
+< Content-Type: application/ld+json; charset=utf-8
+< Content-Length: 120
+< Connection: keep-alive
+< Cache-Control: no-cache, private
+< Link: <https://demo.api-platform.com/docs.jsonld>; rel="http://www.w3.org/ns/hydra/core#apiDocumentation"
+< Permissions-Policy: browsing-topics=()
+< Status: 404 Not Found
+< X-Content-Type-Options: nosniff
+< X-Frame-Options: deny
+< Via: 1.1 google
+< CF-Cache-Status: DYNAMIC
+< Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=IcR7SjuSonJnc3n4WlCLoLiJ1h8EgOr6SWUnGMpTyx9fbS0WKCXKrMid%2BSQICuMjUycsI9fF465A%2B8NJ5D6T6l0MtGpV7Pef9goXfvoWdnHvi4D85mLez9cwcVbQSfqQ%2BtOhO%2F3neMc%3D"}],"group":"cf-nel","max_age":604800}
+< NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+< Server: cloudflare
+< CF-RAY: 755f1c2fbbf2375d-MXP
+< alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+<
+{"@context":"\/contexts\/Error","@type":"hydra:Error","hydra:title":"An error occurred","hydra:description":"Not Found"}* Connection #0 to host demo.api-platform.com left intact
+```
+
 
 ## Quel est le code HTTP ? Que signifie-t-il ?
 
+Le code reçu est le 404 Not Found, il indique qu'un serveur ne peut pas trouver la ressource demandée. Probablement qu'il n'existe pas de top book 9999, top book semble avoir que 100 livres.
 
 ## Exécuter la requête suivante et copier la réponse : curl https://google.fr
 
@@ -199,23 +321,16 @@ curl -v https://webhook.site/37f00faa-5d4f-4572-97a8-2db3c5b785c5 -H "x-student:
 < HTTP/1.1 301 Moved Permanently
 < Location: https://www.google.fr/
 < Content-Type: text/html; charset=UTF-8
-< Date: Wed, 05 Oct 2022 20:28:05 GMT
-< Expires: Wed, 05 Oct 2022 20:28:05 GMT
+< Date: Thu, 06 Oct 2022 14:42:00 GMT
+< Expires: Thu, 06 Oct 2022 14:42:00 GMT
 < Cache-Control: private, max-age=2592000
 < Server: gws
 < Content-Length: 219
 < X-XSS-Protection: 0
 < X-Frame-Options: SAMEORIGIN
-< Set-Cookie: CONSENT=PENDING+314; expires=Fri, 04-Oct-2024 20:28:05 GMT; path=/; domain=.google.fr; Secure
+< Set-Cookie: CONSENT=PENDING+429; expires=Sat, 05-Oct-2024 14:42:00 GMT; path=/; domain=.google.fr; Secure
 < P3P: CP="This is not a P3P policy! See g.co/p3phelp for more info."
 < Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
-<
-<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
-<TITLE>301 Moved</TITLE></HEAD><BODY>
-<H1>301 Moved</H1>
-The document has moved
-<A HREF="https://www.google.fr/">here</A>.
-</BODY></HTML>
 ```
 
 ## Quel est le code HTTP reçu ? Pouvez-vous expliquer cette réponse ?
