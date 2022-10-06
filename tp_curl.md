@@ -188,7 +188,7 @@ curl -X POST -u "chems:123" -H "x-student:RachdiChemseddine" -v https://webhook.
 </html>
 
 
-## Exécuter la commande suivante avec la méthode GET puis indiquer la réponse :  
+## Exécuter la commande suivante avec la méthode GET puis indiquer la réponse https://demo.api-platform.com/books/07dd4786-aaa7-4d08-a467-076b76f1d1b6:  
 
 **reponse** :
 < HTTP/2 404 
