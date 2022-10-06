@@ -338,3 +338,14 @@ Le code reçu est le 404 Not Found, il indique qu'un serveur ne peut pas trouver
 Le code recu est le 301, il est utilisé pour une redirection d'URL permanente. 
 
 ## Comment éviter cette réponse ? Trouvez 2 solutions différentes et détaillez les.
+
+_Solution n°1_ : utilisé `--location command-line option`, ce flag précise à curl de renvoyer une requête à la nouvelle adresse danc ce cas https://www.google.fr/.
+
+```sh
+curl https://google.fr -v -L
+```
+
+
+_Solution n°2_ : suivre la redirection à la main en exécutant une nouvelle requête curl avec la nouvelle adresse ¯\_(ツ)_/¯.
+
+
