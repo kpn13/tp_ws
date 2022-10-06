@@ -403,5 +403,4 @@ The document has moved
 
 **solutions** :  
 *1* curl -L https://google.fr
-*2* 
-
+*2* curl https://www.google.com/
