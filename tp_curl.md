@@ -68,7 +68,7 @@ Le code de retour est 200 => requête réussie
 | Content-Type: | Type de contenu retourné, ici UTF-8 |
 | Transfer-Encoding | La forme encodage utilisé pour transferé l'entitité au serveur (chunked, compress, deflate, gzip, identity) |
 | Vary| Précise au serveur si il peut utilisé la reponse en cache pour les future requête |
-| Cache-control | Contrôle le cache dans les naviguateur, proxies, ici pas ce cache |
+| Cache-control | Contrôle le cache dans les naviguateur, proxies, ici pas de cache |
 | Date | Date et heure de l'envoie de la réponse |
 
 
@@ -129,9 +129,11 @@ curl -X POST -v https://webhook.site/37f00faa-5d4f-4572-97a8-2db3c5b785c5 -H "x-
 
 ## Faire une appel curl en envoyant une basic authentication en utilisant 2 méthodes différentes : copier les commandes exécutées et indiquer la requête et la réponse à chaque fois 
 
+_Méthode n°1_ : en utilisant l'option `-u` qui genère le header automatiquement.
 
 ```sh
 curl -v https://webhook.site/37f00faa-5d4f-4572-97a8-2db3c5b785c5 -H "x-student: VILLELEGIER" -u "login:password"
+
 
 > GET /37f00faa-5d4f-4572-97a8-2db3c5b785c5 HTTP/1.1
 > Host: webhook.site
@@ -151,6 +153,8 @@ curl -v https://webhook.site/37f00faa-5d4f-4572-97a8-2db3c5b785c5 -H "x-student:
 < Cache-Control: no-cache, private
 < Date: Thu, 06 Oct 2022 14:04:32 GMT
 ```
+
+_Méthode n°2_ : En générant nous même le header ¯\_(ツ)_/¯
 
 ```sh
 curl -v https://webhook.site/37f00faa-5d4f-4572-97a8-2db3c5b785c5 -H "x-student: VILLELEGIER" -H "Authorization: Basic bG9naW46cGFzc3dvcmQ="
@@ -177,33 +181,34 @@ curl -v https://webhook.site/37f00faa-5d4f-4572-97a8-2db3c5b785c5 -H "x-student:
 ## Exécuter la commande suivante avec la méthode GET puis indiquer la réponse : curl https://demo.api-platform.com/books/07dd4786-aaa7-4d08-a467-076b76f1d1b6 
 
 
+
+
+La requête renvoie un 404.
+Mais si on demande du html avec curl, on obtient un 200 et le livre. 
+
 ```sh
-> GET /books/07dd4786-aaa7-4d08-a467-076b76f1d1b6 HTTP/1.1
-> Host: demo.api-platform.com
-> User-Agent: curl/7.83.1
-> Accept: */*
+curl https://demo.api-platform.com/books/07dd4786-aaa7-4d08-a467-076b76f1d1b6 -H "Accept: text/html" -v
+```
 
-
-< HTTP/1.1 404 Not Found
-< Date: Thu, 06 Oct 2022 14:22:47 GMT
-< Content-Type: application/ld+json; charset=utf-8
-< Content-Length: 120
+```sh
+< HTTP/1.1 200 OK
+< Date: Thu, 06 Oct 2022 20:24:30 GMT
+< Content-Type: text/html; charset=utf-8
+< Transfer-Encoding: chunked
 < Connection: keep-alive
-< Cache-Control: no-cache, private
-< Link: <https://demo.api-platform.com/docs.jsonld>; rel="http://www.w3.org/ns/hydra/core#apiDocumentation",<https://demo.api-platform.com/.well-known/mercure>; rel="mercure"
+< Cache-Control: s-maxage=3, stale-while-revalidate
+< Link: </docs.jsonld>; rel="http://www.w3.org/ns/hydra/core#apiDocumentation", </.well-known/mercure>; rel="mercure"
 < Permissions-Policy: browsing-topics=()
-< Status: 404 Not Found
-< X-Content-Type-Options: nosniff
-< X-Frame-Options: deny
+< Vary: Accept-Encoding
+< X-Nextjs-Cache: STALE
+< X-Powered-By: Next.js
 < Via: 1.1 google
 < CF-Cache-Status: DYNAMIC
-< Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=sx6U%2BEvUfpsBGe7wEXk%2F3qORhNIlY0xJJepidCqA4djYCiiM9OIMhIaK%2Bx4is3qXjVmpNkZxwQtuSNXC0EIWZLa1PpXv9B%2BRXg26W7eH6oevHSAzFxbTZ%2FvOS2L1nu%2FDB1Ex16qOVjc%3D"}],"group":"cf-nel","max_age":604800}
+< Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=TLsRecZQNWhLqbAWFn93vtgag0%2FCgr6y4Ezv50NTcnzKMA8YS%2FXcK2M8Qj6UYA6V0DkRTSoILyXzILzE%2FJbqZb%2BvhtLE1%2BZV6SRQEXZ9cgvCMuGJFcwAhNzQTUN5eJ6Th%2BeTKFq3VKmC4EUxLniSY5Rlrsk%3D"}],"group":"cf-nel","max_age":604800}
 < NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
 < Server: cloudflare
-< CF-RAY: 755f0d1bbb815995-MXP
+< CF-RAY: 75611ef508d699aa-CDG
 < alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
-<
-{"@context":"\/contexts\/Error","@type":"hydra:Error","hydra:title":"An error occurred","hydra:description":"Not Found"}* Connection #0 to host demo.api-platform.com left intact
 ```
 
 ## Exécuter la commande suivante avec la méthode PATCH  puis indiquer la réponse : curl https://demo.api-platform.com/top_books/1
@@ -240,7 +245,8 @@ curl --request PATCH https://demo.api-platform.com/top_books/1 -v
 
 ## Quel est le code HTTP reçu ? Quel est sa signification ?
 
-Le code reçu est 405 Method Not Allowed, il indique que la méthode utilisée pour la requête est connue du serveur mais qu'elle n'est pas supportée par la ressource ciblée.
+Le code reçu est 405 Method Not Allowed, il indique que la méthode utilisée pour la requête est connue du serveur mais qu'elle n'est pas supportée par la ressource ciblée. Top book doit être 
+générer automatiquement, cela fait sens que seul GET soit autorisé.
 
 ## Exécuter la commande suivante puis indiquer la réponse : curl https://demo.api-platform.com/top_books/1
 
