@@ -203,6 +203,12 @@ Connection #0 to host demo.api-platform.com left intact
 status: 404 Not Found ==> Page introuvable
 
 ## Exécuter la requête suivante et copier la réponse : curl https://google.fr
+<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
+<TITLE>301 Moved</TITLE></HEAD><BODY>
+<H1>301 Moved</H1>
+The document has moved
+<A HREF="https://www.google.fr/">here</A>.
+</BODY></HTML>
 
 
 ## Quel est le code HTTP reçu ? Pouvez-vous expliquer cette réponse ?
