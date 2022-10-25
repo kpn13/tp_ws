@@ -1,6 +1,6 @@
 # TP curl - comprendre les requêtes et les réponses HTTP
 
-Pour les questions suivantes, vous devez utiliser l'url suivante : https://webhook.site/37f00faa-5d4f-4572-97a8-2db3c5b785c5
+Pour les questions suivantes, vous devez utiliser l'url suivante : [https://webhook.site/37f00faa-5d4f-4572-97a8-2db3c5b785c5](https://webhook.site/8e147a78-4d13-4452-9cc0-468b63433501)
 
 Pour tous les appels vous devez ajouter un header pour identifier votre appel parmis ceux des autres étudiants : x-student : VOTRE_NOM
 
