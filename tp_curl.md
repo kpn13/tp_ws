@@ -20,7 +20,8 @@ Ici les headers dans la requete.
 > x-student:QI
 Le sens est de client a serveur web.
 
-## Quelles informations pouvez-vous trouver à propos du certificat SSL ?
+## Quelles informations pouvez-vous trouver à propos du certificat SSL ?
+On peut voir SSL connection using TLSv1.3
 
 
 ## Quel est le code de la réponse ? Que signifie-t-il ?
