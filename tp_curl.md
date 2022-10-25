@@ -8,10 +8,17 @@ Pour tous les appels vous devez ajouter un header pour identifier votre appel pa
 curl -H "x-student:QI" https://webhook.site/8e147a78-4d13-4452-9cc0-468b63433501
 
 ## Quel est la version du protocole utilisé par le serveur ?
-
+On utilise curl -v https://webhook.site/8e147a78-4d13-4452-9cc0-468b63433501 -H "x-student:QI"
+Et on sait la version est 1.1
 
 ## Quels sont les headers que l'on envoie dans la requête ? Quels sont leur sens ?
-
+Ici les headers dans la requete.
+> GET /8e147a78-4d13-4452-9cc0-468b63433501 HTTP/1.1
+> Host: webhook.site
+> User-Agent: curl/7.79.1
+> Accept: */*
+> x-student:QI
+Le sens est de client a serveur web.
 
 ## Quelles informations pouvez-vous trouver à propos du certificat SSL ?
 
