@@ -39,13 +39,16 @@ le code est 200, ca signifie OK.
 < Cache-Control: no-cache, private
 < Date: Tue, 25 Oct 2022 16:30:11 GMT
 
-le sens est de serveur web a client.
-
 ## Faire un appel curl en envoyant du texte brut : copier la commande exécutée et indiquer la requête et la réponse
+curl -d "hello" https://webhook.site/8e147a78-4d13-4452-9cc0-468b63433501 -H "x-student:QI" -v
+le requete est POST /8e147a78-4d13-4452-9cc0-468b63433501 HTTP/1.1
+la reponse est HTTP/1.1 200 OK
 
 
 ## Faire un appel curl en envoyant du JSON (avec les bons headers) : copier la commande exécutée et indiquer la requête et la réponse
-
+curl -d '{"name":"QI"}' -H "Content-Type: application/json" https://webhook.site/8e147a78-4d13-4452-9cc0-468b63433501 -H "x-student:QI" -v
+la requete est POST /8e147a78-4d13-4452-9cc0-468b63433501 HTTP/1.1
+la reponse est HTTP/1.1 200 OK
 
 ## Faire une appel curl en envoyant une basic authentication en utilisant 2 méthodes différentes : copier les commandes exécutées et indiquer la requête et la réponse à chaque fois 
 
