@@ -24,7 +24,8 @@ Le sens est de client a serveur web.
 On peut voir SSL connection using TLSv1.3
 
 
-## Quel est le code de la réponse ? Que signifie-t-il ?
+## Quel est le code de la réponse ? Que signifie-t-il ?
+le code est 200, ca signifie OK.
 
 
 ## Quels headers recevez vous dans la response ? Quels sont leur sens ?
