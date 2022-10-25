@@ -29,7 +29,17 @@ le code est 200, ca signifie OK.
 
 
 ## Quels headers recevez vous dans la response ? Quels sont leur sens ?
+< HTTP/1.1 200 OK
+< Server: nginx
+< Content-Type: text/plain; charset=UTF-8
+< Transfer-Encoding: chunked
+< Vary: Accept-Encoding
+< X-Request-Id: 255befc3-2119-4aec-8dd7-d64af767cde2
+< X-Token-Id: 8e147a78-4d13-4452-9cc0-468b63433501
+< Cache-Control: no-cache, private
+< Date: Tue, 25 Oct 2022 16:30:11 GMT
 
+le sens est de serveur web a client.
 
 ## Faire un appel curl en envoyant du texte brut : copier la commande exécutée et indiquer la requête et la réponse
 
