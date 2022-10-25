@@ -161,7 +161,7 @@ h2 { font-size: 18px; }</style>
 ## Quel est le code HTTP reçu ? Quel est sa signification ?
 ```
 code : 405
-meaning: PATH method is not allowed in this api url
+meaning: PATCH method is not allowed in this api url
 ```
 ## Exécuter la commande suivante puis indiquer la réponse : curl https://demo.api-platform.com/top_books/1
 ```
