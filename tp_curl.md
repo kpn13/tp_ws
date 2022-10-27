@@ -14,28 +14,7 @@ La reponse : Il n'y a pas de reponse. Cette commande est juste censé ajouter un
 La commande : ```curl -v  https://webhook.site/d4ec90aa-8173-48dd-8414-6fb832ea2a26```
 Reponse : La version du protocole utilisé par le serveur est : HTTP/1.1
 ``
-*   Trying 46.4.105.116:443...
-    * Connected to webhook.site (46.4.105.116) port 443 (#0)
-    * schannel: disabled automatic use of client certificate
-    * ALPN: offers http/1.1
-    * ALPN: server did not agree on a protocol. Uses default.
-    > GET /d4ec90aa-8173-48dd-8414-6fb832ea2a26 HTTP/1.1
-    > Host: webhook.site
-    > User-Agent: curl/7.83.1
-    > Accept: */*
-    >
-    * Mark bundle as not supporting multiuse
-    < HTTP/1.1 200 OK
-    < Server: nginx
-    < Content-Type: text/plain; charset=UTF-8
-    < Transfer-Encoding: chunked
-    < Vary: Accept-Encoding
-    < X-Request-Id: ad61a4a5-9d07-443c-b92e-50b0941503a0
-    < X-Token-Id: d4ec90aa-8173-48dd-8414-6fb832ea2a26
-    < Cache-Control: no-cache, private
-    < Date: Sun, 25 Sep 2022 18:31:34 GMT
-    <
-    * Connection #0 to host webhook.site left intact
+    * ALPN: offers http/1.1    
 ``
 ## Quels sont les headers que l'on envoie dans la requête ? Quels sont leur sens ?
 
@@ -116,33 +95,90 @@ la requete : ``curl -d "Megi Balliu 1ere année de master" https://webhook.site/
 la reponse : Il n'y a pas de reponse, donc a priori c'est que ca a marché.
 
 ## Faire un appel curl en envoyant du JSON (avec les bons headers) : copier la commande exécutée et indiquer la requête et la réponse
- PAS FINIE `` curl -X POST "Content-Type: application/json" -F "nom = Megi" https://webhook.site/37f00faa-5d4f-4572-97a8-2db3c5b785c5 -v ``
+
+ ``curl -d "{'nom': 'balliu', 'prenom': 'megi'}" -H "Content-Type: application/json" -X POST https://webhook.site/8e147a78-4d13-4452-9cc0-468b63433501``
 
 ## Faire une appel curl en envoyant une basic authentication en utilisant 2 méthodes différentes : copier les commandes exécutées et indiquer la requête et la réponse à chaque fois 
 
+1ere Methode : 
+    la commande : 
+        ``curl -u megi:password https://webhook.site/8e147a78-4d13-4452-9cc0-468b63433501``
+    Pas de reponse
+    
+    Si on rajoute -v a la fin de la commande on a :
+    la requete : GET /8e147a78-4d13-4452-9cc0-468b63433501 HTTP/1.1
+    la reponse : HTTP/1.1 200 OK
+
+
+2eme methode : 
+    la commande : 
+        ``curl -u megi:password https://webhook.site/8e147a78-4d13-4452-9cc0-468b63433501 -H "megi:password" -v``
+    la requete : GET /8e147a78-4d13-4452-9cc0-468b63433501 HTTP/1.1
+    la reponse : HTTP/1.1 200 OK
 
 ## Exécuter la commande suivante avec la méthode GET puis indiquer la réponse : curl https://demo.api-platform.com/books/07dd4786-aaa7-4d08-a467-076b76f1d1b6 
 
+La commande : ``curl https://demo.api-platform.com/books/07dd4786-aaa7-4d08-a467-076b76f1d1b6``
+
+La reponse : {"@context":"\/contexts\/Error","@type":"hydra:Error","hydra:title":"An error occurred","hydra:description":"Not Found"}
 
 ## Exécuter la commande suivante avec la méthode PATCH  puis indiquer la réponse : curl https://demo.api-platform.com/top_books/1
 
+La commande : ``curl -X PATCH https://demo.api-platform.com/top_books/1``
+
+La reponse : 
+    <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <title>An Error Occurred: Method Not Allowed</title>
+    <style>body { background-color: #fff; color: #222; font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; margin: 0; }
+.container { margin: 30px; max-width: 600px; }
+h1 { color: #dc3545; font-size: 24px; }
+h2 { font-size: 18px; }</style>
+</head>
+<body>
+<div class="container">
+    <h1>Oops! An Error Occurred</h1>
+    <h2>The server returned a "405 Method Not Allowed".</h2>
+
+    <p>
+        Something is broken. Please let us know what you were doing when this error occurred.
+        We will fix it as soon as possible. Sorry for any inconvenience caused.
+    </p>
+</div>
+</body>
+</html>
 
 ## Quel est le code HTTP reçu ? Quel est sa signification ?
-
+Le code HTTP recu cest 405 qui fait partie des erreurs coté client. Plus precisement 405 cest que la methode n'est pas disponible. Par conséquent, le navigateur Web ne peut pas accéder à la page Web.
 
 ## Exécuter la commande suivante puis indiquer la réponse : curl https://demo.api-platform.com/top_books/1
-
+Reponse ``{"@context":"\/contexts\/TopBook","@id":"\/top_books\/1","@type":"TopBook","id":1,"title":"Depuis l\u0027au-delà","author":"Werber Bernard","part":"","place":"F WER","borrowCount":9}``
 
 ## Exécuter la commande suivante puis indiquer la réponse : curl https://demo.api-platform.com/top_books/9999
-
+Reponse : ``{"@context":"\/contexts\/Error","@type":"hydra:Error","hydra:title":"An error occurred","hydra:description":"Not Found"}``
 
 ## Quel est le code HTTP ? Que signifie-t-il ?
-
+Reponse : ``HTTP/1.1 404 Not Found``
+Code reponse HTTP 404, ca veut dire que c'est introuvable ou que ca n'existe pas
 
 ## Exécuter la requête suivante et copier la réponse : curl https://google.fr
+La reponse : ``<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
+<TITLE>301 Moved</TITLE></HEAD><BODY>
+<H1>301 Moved</H1>
+The document has moved
+<A HREF="https://www.google.fr/">here</A>.
+</BODY></HTML>``
 
 
 ## Quel est le code HTTP reçu ? Pouvez-vous expliquer cette réponse ?
+Le code reponse HTTP recu c'est 301 qui fait partie de la famille des 300(redirect). Plus precisement 301 c'est un redirect definitive, indique que la ressource a définitivement été déplacée
 
 
 ## Comment éviter cette réponse ? Trouvez 2 solutions différentes et détaillez les.
+Une solution c'est d'utiliser correctement le slash en fin de ligne. Si on a pas de regles de réécriture il existent possiblement 8 version d'une page. Pour resoudre ce probleme, faut ajouter des regles de réécriture au fichier .htaccess. Vu que les regles ne sont pas toujours ecrit correctement ca peut entrainer des problemes
+
+Une autre solution est de mettre en place un acces direct aux ressources non HTML. 
+Toutes les ressources non HTML doivent etre accessibles directement avant d'etre affichées a l'utilisateur. Il peut etre utile de conserver les images de notre page de renvoi dans la base de données plutot que d'avoir recours a des liens qui amenent vers des images stock.
